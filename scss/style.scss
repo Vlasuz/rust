@@ -1,0 +1,11 @@
+@import "includes/normalize.scss";
+
+.wrapper{
+	max-width: calc(1200px + 30px);
+	margin: 0 auto;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@import "media.scss";
