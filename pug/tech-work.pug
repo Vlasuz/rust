@@ -1,0 +1,18 @@
+extends includes/head.pug
+block body
+
+	body
+		include includes/header.pug
+
+		main.tech-work
+			.ico
+				img(src="img/tech-work-ico.svg" alt="Ico")
+			h1 Технические работы
+			p На данный момент мы улучшаем сайт и стараемся сделать его еще лучше! <br />Сайт заработает через:
+			time(datatime="02:48:22")
+				span.hour 02
+				span.min :48
+				span.sec :22
+
+		include includes/footer.pug
+		include includes/scripts.pug
