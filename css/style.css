@@ -216,6 +216,27 @@ body {
   width: 100%;
   text-align: center
 }
+.tech-work a {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: var(--cFF);
+  padding: 20px 22px;
+  background: rgba(85,98,221,.8);
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease
+}
+.tech-work a:hover {
+  background: #353ca9
+}
 .tech-work img {
   display: block
 }

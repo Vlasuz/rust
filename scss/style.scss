@@ -28,6 +28,23 @@ body{
 	margin: auto;
 	width: 100%;
 	text-align: center;
+	a{
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 12px;
+		text-transform: uppercase;
+		color: var(--cFF);
+		padding: 20px 22px;
+		background: rgba(85, 98, 221, 0.8);
+		border-radius: 8px;
+		display: block;
+		margin: 0 auto;
+		width: fit-content;
+		transition: all .3s ease;
+		&:hover{
+			background: #353CA9;
+		}
+	}
 	img{
 		display: block;
 	}
@@ -44,8 +61,6 @@ body{
 			background: rgba(219, 71, 82, 0.2);
 			filter: blur(12.5px);
 			position: absolute;
-			// top: 0;
-			// left: 0;
 			width: 34px;
 			height: 34px;
 			border-radius: 50%;
