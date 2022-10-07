@@ -1,0 +1,480 @@
+extends includes/head.pug
+block body
+
+	body
+		include includes/header.pug
+
+		main.wrapper
+
+			include includes/aside.pug
+
+			
+
+			section.section-fight
+
+				.section-fight__lft
+
+
+					.section-fight__top
+						.section-fight__user
+							.user__photo
+								img(src="img/user.jpeg" alt="User")
+							.user__name Семён
+						.section-fight__resources
+							.resources__clothes
+								button.clothes__head
+									img(src="img/clothes.svg" alt="Ico")
+								.clothes__body
+									ul
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li.count
+											span +3
+							.resources__coins
+								img(src="img/header__coins.svg" alt="Ico")
+								span 100
+					.section-fight__persone
+						.persone__start
+							img(src="img/persone-nnn.png" alt="Persone")
+					.section-fight__bottom
+						button.section-fight__cancel Отменить игру
+
+				.section-fight__center
+					.center__loading
+						.load
+							.load__line
+							.load__line
+							.load__line
+						span Ожидание
+
+				.section-fight__rht
+
+					.section-fight__top
+						.section-fight__user.section-fight__user_hidden
+							.user__photo
+								img(src="img/user.jpeg" alt="User")
+							.user__name Семён
+						.section-fight__resources
+							.resources__clothes
+								button.clothes__head
+									img(src="img/clothes.svg" alt="Ico")
+								.clothes__body
+									ul
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li
+											.clothes__cool.clothes__cool_green
+											img(src="img/weapon.png" alt="Photo")
+										li.count
+											span +3
+							.resources__coins.resources__coins_none
+								img(src="img/header__coins.svg" alt="Ico")
+								span 0
+					.section-fight__persone
+						.persone__start
+							img(src="img/persone-siluete.png" alt="Persone")
+					.section-fight__bottom
+						.section-fight__opponent-info Нет игрока
+
+
+
+
+
+
+
+			section.section-right
+				.section-right__top
+					button.top__item.top__item_active
+						span Постамат
+					button.top__item
+						span Чат
+						.people
+							img(src="img/users.svg" alt="Ico")
+							span 176
+
+				.section-right__switcher
+					.section-right__item.section-right_active
+
+						.section-right__notice
+							.notice__item.notice__add-cart
+								span Добавлен в корзину
+								img(src="img/green-check.svg" alt="Check")
+
+						.postamat
+							.postamat__search
+								input(type="text" placeholder="Поиск")
+								button
+									img(src="img/search.svg" alt="Search")
+							.postamat__range
+								input(type="range")
+								.range__text
+									img(src="img/header__coins.svg" alt="Coin")
+									p 84 — 6390
+							form(action="#").postamat__filter
+								input(type="radio" checked name="filter")#filterPrice
+								label(for="filterPrice").filter__item.filter__price
+									span По цене
+									input(type="checkbox" name="upDown")
+									img(src="img/filter.svg" alt="filter")
+								input(type="radio" name="filter")#filterCool
+								label(for="filterCool").filter__item.filter__item_active.filter__cool
+									span По раритетности
+									input(type="checkbox" name="upDown")
+									img(src="img/filter.svg" alt="filter")
+								button.filter__reload
+									img(src="img/reload.svg" alt="filter")
+									span Обновить
+
+							hr
+
+							.postamat__block
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+								.postamat__item
+									.item__buy
+										img(src="img/basket.svg" alt="Basket")
+									.item__count 2
+									.item__cool.clothes__cool_green
+									.item__photo
+										img(src="img/skin.png" alt="Skin")
+									.item__price
+										img(src="img/header__coins.svg" alt="Ico")
+										span 3000
+
+							.postamat__cart.postamat__cart_empty
+								img(src="img/cart.svg" alt="cart")
+								span Корзина пуста
+
+
+
+					.section-right__item
+						.section-right__chatting
+							.chatting__block
+								.chatting__item
+									.item__photo
+										.photo
+											img(src="img/user.jpeg" alt="User")
+										.mark
+											img(src="img/twitch.svg" alt="Ico")
+									.item__inner
+										.item__top
+											h4.item__name Система
+											.item__muted
+												img(src="img/muted.svg" alt="Menu")
+											button.item__menu
+												img(src="img/chat-menu.svg" alt="Menu")
+											time.item__time 12:46
+										.item__text
+											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+										ul.item__dropdown
+											li
+												a(href="#") Скрыть сообщение
+											li
+												a(href="#") Заглушить
+											li
+												a(href="#") Блокировать 1ч
+											li
+												a(href="#") Бан чата
+											li.li__delete
+												a(href="#") Удалить
+								.chatting__item.chatting__item_muted
+									.item__photo
+										.photo
+											img(src="img/user.jpeg" alt="User")
+										.mark
+											img(src="img/twitch.svg" alt="Ico")
+									.item__inner
+										.item__top
+											h4.item__name Система
+											.item__muted
+												img(src="img/muted.svg" alt="Menu")
+											button.item__menu
+												img(src="img/chat-menu.svg" alt="Menu")
+											time.item__time 12:46
+										.item__text
+											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+										ul.item__dropdown
+											li
+												a(href="#") Скрыть сообщение
+											li
+												a(href="#") Заглушить
+											li
+												a(href="#") Блокировать 1ч
+											li
+												a(href="#") Бан чата
+											li.li__delete
+												a(href="#") Удалить
+								.chatting__item
+									.item__photo
+										.photo
+											img(src="img/user.jpeg" alt="User")
+										.mark
+											img(src="img/twitch.svg" alt="Ico")
+									.item__inner
+										.item__top
+											h4.item__name Система
+											.item__muted
+												img(src="img/muted.svg" alt="Menu")
+											button.item__menu
+												img(src="img/chat-menu.svg" alt="Menu")
+											time.item__time 12:46
+										.item__text
+											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+										ul.item__dropdown
+											li
+												a(href="#") Скрыть сообщение
+											li
+												a(href="#") Заглушить
+											li
+												a(href="#") Блокировать 1ч
+											li
+												a(href="#") Бан чата
+											li.li__delete
+												a(href="#") Удалить
+								.chatting__item
+									.item__photo
+										.photo
+											img(src="img/user.jpeg" alt="User")
+										.mark
+											img(src="img/twitch.svg" alt="Ico")
+									.item__inner
+										.item__top
+											h4.item__name Система
+											.item__muted
+												img(src="img/muted.svg" alt="Menu")
+											button.item__menu
+												img(src="img/chat-menu.svg" alt="Menu")
+											time.item__time 12:46
+										.item__text
+											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+										ul.item__dropdown
+											li
+												a(href="#") Скрыть сообщение
+											li
+												a(href="#") Заглушить
+											li
+												a(href="#") Блокировать 1ч
+											li
+												a(href="#") Бан чата
+											li.li__delete
+												a(href="#") Удалить
+								.chatting__item
+									.item__photo
+										.photo
+											img(src="img/user.jpeg" alt="User")
+										.mark
+											img(src="img/twitch.svg" alt="Ico")
+									.item__inner
+										.item__top
+											h4.item__name Система
+											.item__muted
+												img(src="img/muted.svg" alt="Menu")
+											button.item__menu
+												img(src="img/chat-menu.svg" alt="Menu")
+											time.item__time 12:46
+										.item__text
+											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+										ul.item__dropdown
+											li
+												a(href="#") Скрыть сообщение
+											li
+												a(href="#") Заглушить
+											li
+												a(href="#") Блокировать 1ч
+											li
+												a(href="#") Бан чата
+											li.li__delete
+												a(href="#") Удалить
+							.section-right__resources
+								a(href="#") Правила чата
+								a(href="#") Пользовательское соглашение
+							form(action="#").section-right__bottom
+								label.textarea
+									input(placeholder="Сообщение" maxlength="150")
+									span.maxl 0/150
+								.smiles
+									img(src="img/smile-1.png" alt="Smile")
+								button.send
+									img(src="img/send-message.svg" alt="Ico")
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		include includes/footer.pug
+		include includes/scripts.pug

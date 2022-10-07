@@ -4,6 +4,607 @@ block body
 	body
 		include includes/header.pug
 
+		main.wrapper
+
+				include includes/aside.pug
+
+				section.section-blocks
+
+					<!-- .section-block.section-block-information.section-block-newcomer -->
+					.section-block.section-block-information
+						.top-gamer
+							.top-gamer__vertical
+								span Игрок недели
+							.top-gamer__info
+								.info__photo
+									img(src="img/user.jpeg" alt="Photo")
+								.info__block
+									h2.info__name Рафаэль Миркович
+									a(href="#").info__profile
+										img(src="img/steam.svg" alt="Steam")
+										span ПРОФИЛЬ
+							.top-gamer__trade-link
+								.trade-link__block
+									h3 Trade-ссылка
+									button.trade-link__button Изменить
+								.trade-link__check
+									img(src="img/active.svg" alt="Photo")
+									span АКТИВНО
+						.balance
+							.balance__top
+								.balance__block
+									h3 Баланс
+									.balance__coins
+										img(src="img/header__coins.svg" alt="Ico")
+										span 1 086
+								a(href="#").balance__add
+									span Пополнить
+									img(src="img/balance-add.svg" alt="Ico")
+							.balance__history
+								img(src="img/clock.svg" alt="Ico")
+								span Итория баланса
+						.stats
+							h3 Аирдроп
+							p 782
+								sup 43%
+							.lines
+								.line.line_active
+								.line
+								.line.line_active
+								.line
+								.line
+								.line
+						.stats.stats_disabled
+							h3 Схватка
+							p Нет данных
+						.stats
+							h3 Бобовка
+							p 186
+								sup 74 победы
+							.lines
+								.line
+								.line.line_active
+								.line.line_active
+								.line
+								.line.line_active
+								.line
+						.stats
+							h3 Иподром
+							p 40
+								sup 8 побед
+							.lines
+								.line
+								.line
+								.line.line_active
+								.line
+								.line.line_active
+								.line.line_active
+
+					.section-block
+						ul.tabs
+							li.li_active
+								a(href="#") Аирдроп
+							li
+								a(href="#") Схватка
+							li
+								a(href="#") Бобовка
+							li
+								a(href="#") Иподром
+						.tabs__block
+							.tabs__item.tabs__item_active
+								.table
+									.thead
+										.tr
+											.td Дата
+											.td Спальники
+											.td Игроки
+											.td Ставка
+											.td Банк
+											.td PF
+											.td Исход
+									.tbody
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td R14
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td X16
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/victory.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td R14
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td E8
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/victory.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td R14
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td E8
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/victory.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td R14
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td E8
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user2.jpeg" alt="User")
+														li
+															img(src="img/user.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												.shield
+													img(src="img/shield.svg" alt="Shield")
+													a(href="#") E24fs....ukhd42
+											.td
+												img(src="img/victory.svg" alt="Shield")
+							.tabs__item
+								.table
+									.thead
+										.tr
+											.td Дата
+											.td Соперник
+											.td Ставка
+											.td Банк
+											.td Исход
+									.tbody
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												img(src="img/fail.svg" alt="Shield")
+										.tr
+											.td 18:23
+												span 12.07.21
+											.td
+												.list-players
+													ul
+														li
+															img(src="img/user2.jpeg" alt="User")
+													.num
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 100
+											.td
+												img(src="img/header__coins.svg" alt="Ico")
+												span 1450
+											.td
+												img(src="img/fail.svg" alt="Shield")
+							.tabs__item
+								big Нет данных
+							.tabs__item
+								big Нет данных
+
+
+
+				section.section-right
+					.section-right__top
+						button.top__item
+							span Навигатор
+						button.top__item.top__item_active
+							span Чат
+							.people
+								img(src="img/users.svg" alt="Ico")
+								span 176
+
+					.section-right__chatting
+						.chatting__block
+							.chatting__item
+								.item__photo
+									.photo
+										img(src="img/user.jpeg" alt="User")
+									.mark
+										img(src="img/twitch.svg" alt="Ico")
+								.item__inner
+									.item__top
+										h4.item__name Система
+										.item__muted
+											img(src="img/muted.svg" alt="Menu")
+										button.item__menu
+											img(src="img/chat-menu.svg" alt="Menu")
+										time.item__time 12:46
+									.item__text
+										p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+									ul.item__dropdown
+										li
+											a(href="#") Скрыть сообщение
+										li
+											a(href="#") Заглушить
+										li
+											a(href="#") Блокировать 1ч
+										li
+											a(href="#") Бан чата
+										li.li__delete
+											a(href="#") Удалить
+							.chatting__item.chatting__item_muted
+								.item__photo
+									.photo
+										img(src="img/user.jpeg" alt="User")
+									.mark
+										img(src="img/twitch.svg" alt="Ico")
+								.item__inner
+									.item__top
+										h4.item__name Система
+										.item__muted
+											img(src="img/muted.svg" alt="Menu")
+										button.item__menu
+											img(src="img/chat-menu.svg" alt="Menu")
+										time.item__time 12:46
+									.item__text
+										p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+									ul.item__dropdown
+										li
+											a(href="#") Скрыть сообщение
+										li
+											a(href="#") Заглушить
+										li
+											a(href="#") Блокировать 1ч
+										li
+											a(href="#") Бан чата
+										li.li__delete
+											a(href="#") Удалить
+							.chatting__item
+								.item__photo
+									.photo
+										img(src="img/user.jpeg" alt="User")
+									.mark
+										img(src="img/twitch.svg" alt="Ico")
+								.item__inner
+									.item__top
+										h4.item__name Система
+										.item__muted
+											img(src="img/muted.svg" alt="Menu")
+										button.item__menu
+											img(src="img/chat-menu.svg" alt="Menu")
+										time.item__time 12:46
+									.item__text
+										p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+									ul.item__dropdown
+										li
+											a(href="#") Скрыть сообщение
+										li
+											a(href="#") Заглушить
+										li
+											a(href="#") Блокировать 1ч
+										li
+											a(href="#") Бан чата
+										li.li__delete
+											a(href="#") Удалить
+							.chatting__item
+								.item__photo
+									.photo
+										img(src="img/user.jpeg" alt="User")
+									.mark
+										img(src="img/twitch.svg" alt="Ico")
+								.item__inner
+									.item__top
+										h4.item__name Система
+										.item__muted
+											img(src="img/muted.svg" alt="Menu")
+										button.item__menu
+											img(src="img/chat-menu.svg" alt="Menu")
+										time.item__time 12:46
+									.item__text
+										p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+									ul.item__dropdown
+										li
+											a(href="#") Скрыть сообщение
+										li
+											a(href="#") Заглушить
+										li
+											a(href="#") Блокировать 1ч
+										li
+											a(href="#") Бан чата
+										li.li__delete
+											a(href="#") Удалить
+							.chatting__item
+								.item__photo
+									.photo
+										img(src="img/user.jpeg" alt="User")
+									.mark
+										img(src="img/twitch.svg" alt="Ico")
+								.item__inner
+									.item__top
+										h4.item__name Система
+										.item__muted
+											img(src="img/muted.svg" alt="Menu")
+										button.item__menu
+											img(src="img/chat-menu.svg" alt="Menu")
+										time.item__time 12:46
+									.item__text
+										p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
+									ul.item__dropdown
+										li
+											a(href="#") Скрыть сообщение
+										li
+											a(href="#") Заглушить
+										li
+											a(href="#") Блокировать 1ч
+										li
+											a(href="#") Бан чата
+										li.li__delete
+											a(href="#") Удалить
+						.section-right__resources
+							a(href="#") Правила чата
+							a(href="#") Пользовательское соглашение
+						form(action="#").section-right__bottom
+							label.textarea
+								input(placeholder="Сообщение" maxlength="150")
+								span.maxl 0/150
+							.smiles
+								img(src="img/smile-1.png" alt="Smile")
+							button.send
+								img(src="img/send-message.svg" alt="Ico")
+
+
+
+
+
+
+
+
+
+
+
 		
 
 		include includes/footer.pug
