@@ -1,0 +1,259 @@
+section.section-right
+	.section-right__top
+		button.top__item.top__item_active
+			span Постамат
+		button.top__item
+			span Чат
+			.people
+				img(src="img/users.svg" alt="Ico")
+				span 176
+
+	.section-right__switcher
+		
+		include notice.pug
+
+		.section-right__item.section-right_active
+
+			.section-right__cart-bought
+				.text
+					h3
+						span Отлично
+						.img
+							img(src="img/green-check.svg" alt="Ico")
+					p Предметы куплены
+				button.cart-bought__close Закрыть
+			.section-right__cart
+				h2 Корзина
+
+				.cart__list
+					.cart__item
+						.clothes__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Ico")
+						.item__info
+							.item__name Cucumber Eoka
+							.item__price
+								img(src="img/header__coins.svg" alt="Coins")
+								span 180
+						.item__delete
+							img(src="img/cross.svg" alt="Delete")
+					.cart__item
+						.clothes__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Ico")
+						.item__info
+							.item__name Cucumber Eoka
+							.item__price
+								img(src="img/header__coins.svg" alt="Coins")
+								span 180
+						.item__delete
+							img(src="img/cross.svg" alt="Delete")
+					.cart__item
+						.clothes__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Ico")
+						.item__info
+							.item__name Cucumber Eoka
+							.item__price
+								img(src="img/header__coins.svg" alt="Coins")
+								span 180
+						.item__delete
+							img(src="img/cross.svg" alt="Delete")
+
+				.buttons
+					button.buttons__back
+						img(src="img/arr-td.svg" alt="Ico")
+						span Назад
+					button.buttons__buy
+						span Купить
+
+			.postamat
+				.postamat__search
+					input(type="text" placeholder="Поиск")
+					button
+						img(src="img/search.svg" alt="Search")
+				.postamat__range
+					input(type="range")
+					.range__text
+						img(src="img/header__coins.svg" alt="Coin")
+						p 84 — 6390
+				form(action="#").postamat__filter
+					input(type="radio" checked name="filter")#filterPrice
+					label(for="filterPrice").filter__item.filter__price
+						span По цене
+						input(type="checkbox" name="upDown")
+						img(src="img/filter.svg" alt="filter")
+					input(type="radio" name="filter")#filterCool
+					label(for="filterCool").filter__item.filter__item_active.filter__cool
+						span По раритетности
+						input(type="checkbox" name="upDown")
+						img(src="img/filter.svg" alt="filter")
+					button.filter__reload
+						img(src="img/reload.svg" alt="filter")
+						span Обновить
+
+				hr
+
+				.postamat__block
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+					.postamat__item
+						.item__buy
+							img(src="img/basket.svg" alt="Basket")
+						.item__count 2
+						.item__cool.clothes__cool_green
+						.item__photo
+							img(src="img/skin.png" alt="Skin")
+						.item__price
+							img(src="img/header__coins.svg" alt="Ico")
+							span 3000
+
+				.postamat__cart.postamat__cart_empty
+					img(src="img/cart.svg" alt="cart")
+					span Корзина пуста
+				.postamat__cart.postamat__cart_show.postamat__cart_full
+					span 4 предмета
+					.sum
+						img(src="img/header__coins.svg" alt="Coins")
+						span 3000
+
+		.section-right__item
+			include chat.pug

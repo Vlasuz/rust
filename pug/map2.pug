@@ -12,9 +12,45 @@ block body
 
 			section.section-map
 
-				.trajectory
-					.plane
-						img(src="img/plane.png" alt="Plane" width="54")
+				.section-map__top
+					.section-map__game-is Игра #32875002
+					.section-map__code
+						img(src="img/shield-map.svg" alt="Ico")
+						span E24n...84dke
+
+				.section-map__map
+					img(src="img/map.png" alt="Map").map-img
+					.map__points
+						.point(style="left: 500px; top: 200px")
+							.point__winner
+								.line
+								.circle1(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.4) 100%);")
+								.circle2(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.1) 100%);")
+								.dot(style="background: #92C145")
+							.point__group
+								.point__photo
+									img(src="img/user2.png" alt="Photo")
+									<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.08361 7.08363C15.4141 -1.24683 28.9204 -1.24683 37.2509 7.08363C45.5813 15.4141 45.5813 28.9204 37.2509 37.2509L26.4099 48.0919C24.0667 50.435 20.2677 50.435 17.9246 48.0919L7.08361 37.2509C-1.24685 28.9204 -1.24685 15.4141 7.08361 7.08363Z" fill="#92C145"/></svg>
+								.point__dot
+									.line(style="background: #92C145")
+									.dot(style="background: #92C145")
+						.point.point__nearly(style="left: 600px; top: 400px")
+							.point__winner
+								.line
+								.circle1(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.4) 100%);")
+								.circle2(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.1) 100%);")
+								.dot(style="background: #F5AD57")
+							.point__group
+								.point__photo
+									img(src="img/user.jpeg" alt="Photo")
+									<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.08361 7.08363C15.4141 -1.24683 28.9204 -1.24683 37.2509 7.08363C45.5813 15.4141 45.5813 28.9204 37.2509 37.2509L26.4099 48.0919C24.0667 50.435 20.2677 50.435 17.9246 48.0919L7.08361 37.2509C-1.24685 28.9204 -1.24685 15.4141 7.08361 7.08363Z" fill="#F5AD57"/></svg>
+								.point__dot
+									.line(style="background: #F5AD57")
+									.dot(style="background: #F5AD57")
+
+					.trajectory
+						.plane
+							img(src="img/plane.png" alt="Plane" width="54")
 
 				.notice-bottom
 					span Проигрыш
@@ -24,340 +60,7 @@ block body
 
 
 
-			section.section-right
-				.section-right__top
-					button.top__item.top__item_active
-						span Аирдроп
-					button.top__item
-						span Чат
-						.people
-							img(src="img/users.svg" alt="Ico")
-							span 176
-
-				.section-right__switcher
-					.section-right__item.section-right_active
-
-						.section-right__notice
-							.notice__item.notice__sleepers-bought
-								span Спальники куплены
-								img(src="img/green-check.svg" alt="Ico")
-
-						.section-right__airdrop
-							.airdrop__block
-								.airdrop__fly
-									.fly__top
-										p До вылета:
-										.time
-											span.min 20
-											span.sec .00
-									.fly__bottom
-										.fly__timer
-											img(src="img/line-for-right.svg" alt="Ico")
-											.line
-												.line_done
-								.airdrop__bank
-									p В банке
-									.coins
-										img(src="img/header__coins.svg" alt="Ico")
-										span 1870
-
-							//- .airdrop__sleepers
-								h3 Кол-во спальников:
-								ul
-									li
-										button 1
-									li
-										button 2
-									li
-										button 3
-									li
-										button 4
-									li
-										button 5
-									li
-										button 6
-									li
-										button 7
-									li
-										button 8
-									li
-										button 9
-								button.sleepers__buy
-									span Купить
-									img(src="img/header__coins.svg" alt="Coin")
-									span 150
-
-							.airdrop__move
-								h3 Перетащите спальники:
-								ul
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-									li
-										button
-								.move__buttons
-									button.move__random
-										span случайно
-										img(src="img/random.svg" alt="Random")
-									button.move__submit
-										span Подтвердить
-
-						<!-- section-right__players section-right__players_none -->
-						.section-right__players
-							<!-- <big>Ставок нет</big> -->
-							.players__top
-								h3 Игроки
-								.count
-									img(src="img/players.svg" alt="Ico")
-									span 18
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 50
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 50
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 50
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 50
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-							.players__item
-								.item__photo
-									img(src="img/user.jpeg" alt="User")
-								p.item__name Семён
-								.item__coins
-									img(src="img/header__coins.svg" alt="Coins")
-									span 100
-
-
-					.section-right__item
-						.section-right__chatting
-							.chatting__block
-								.chatting__item
-									.item__photo
-										.photo
-											img(src="img/user.jpeg" alt="User")
-										.mark
-											img(src="img/twitch.svg" alt="Ico")
-									.item__inner
-										.item__top
-											h4.item__name Система
-											.item__muted
-												img(src="img/muted.svg" alt="Menu")
-											button.item__menu
-												img(src="img/chat-menu.svg" alt="Menu")
-											time.item__time 12:46
-										.item__text
-											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-										ul.item__dropdown
-											li
-												a(href="#") Скрыть сообщение
-											li
-												a(href="#") Заглушить
-											li
-												a(href="#") Блокировать 1ч
-											li
-												a(href="#") Бан чата
-											li.li__delete
-												a(href="#") Удалить
-								.chatting__item.chatting__item_muted
-									.item__photo
-										.photo
-											img(src="img/user.jpeg" alt="User")
-										.mark
-											img(src="img/twitch.svg" alt="Ico")
-									.item__inner
-										.item__top
-											h4.item__name Система
-											.item__muted
-												img(src="img/muted.svg" alt="Menu")
-											button.item__menu
-												img(src="img/chat-menu.svg" alt="Menu")
-											time.item__time 12:46
-										.item__text
-											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-										ul.item__dropdown
-											li
-												a(href="#") Скрыть сообщение
-											li
-												a(href="#") Заглушить
-											li
-												a(href="#") Блокировать 1ч
-											li
-												a(href="#") Бан чата
-											li.li__delete
-												a(href="#") Удалить
-								.chatting__item
-									.item__photo
-										.photo
-											img(src="img/user.jpeg" alt="User")
-										.mark
-											img(src="img/twitch.svg" alt="Ico")
-									.item__inner
-										.item__top
-											h4.item__name Система
-											.item__muted
-												img(src="img/muted.svg" alt="Menu")
-											button.item__menu
-												img(src="img/chat-menu.svg" alt="Menu")
-											time.item__time 12:46
-										.item__text
-											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-										ul.item__dropdown
-											li
-												a(href="#") Скрыть сообщение
-											li
-												a(href="#") Заглушить
-											li
-												a(href="#") Блокировать 1ч
-											li
-												a(href="#") Бан чата
-											li.li__delete
-												a(href="#") Удалить
-								.chatting__item
-									.item__photo
-										.photo
-											img(src="img/user.jpeg" alt="User")
-										.mark
-											img(src="img/twitch.svg" alt="Ico")
-									.item__inner
-										.item__top
-											h4.item__name Система
-											.item__muted
-												img(src="img/muted.svg" alt="Menu")
-											button.item__menu
-												img(src="img/chat-menu.svg" alt="Menu")
-											time.item__time 12:46
-										.item__text
-											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-										ul.item__dropdown
-											li
-												a(href="#") Скрыть сообщение
-											li
-												a(href="#") Заглушить
-											li
-												a(href="#") Блокировать 1ч
-											li
-												a(href="#") Бан чата
-											li.li__delete
-												a(href="#") Удалить
-								.chatting__item
-									.item__photo
-										.photo
-											img(src="img/user.jpeg" alt="User")
-										.mark
-											img(src="img/twitch.svg" alt="Ico")
-									.item__inner
-										.item__top
-											h4.item__name Система
-											.item__muted
-												img(src="img/muted.svg" alt="Menu")
-											button.item__menu
-												img(src="img/chat-menu.svg" alt="Menu")
-											time.item__time 12:46
-										.item__text
-											p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-										ul.item__dropdown
-											li
-												a(href="#") Скрыть сообщение
-											li
-												a(href="#") Заглушить
-											li
-												a(href="#") Блокировать 1ч
-											li
-												a(href="#") Бан чата
-											li.li__delete
-												a(href="#") Удалить
-							.section-right__resources
-								a(href="#") Правила чата
-								a(href="#") Пользовательское соглашение
-							form(action="#").section-right__bottom
-								label.textarea
-									input(placeholder="Сообщение" maxlength="150")
-									span.maxl 0/150
-								.smiles
-									img(src="img/smile-1.png" alt="Smile")
-								button.send
-									img(src="img/send-message.svg" alt="Ico")
+			include rights/rights-airdrop-set-chat.pug
 
 
 

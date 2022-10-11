@@ -1,0 +1,49 @@
+section.section-right
+	.section-right__top
+		button.top__item.top__item_active
+			span Переработчик
+		button.top__item
+			span Чат
+			.people
+				img(src="img/users.svg" alt="Ico")
+				span 176
+
+	.section-right__switcher
+
+		include notice.pug
+
+		.section-right__item.section-right_active
+
+			.postamat.storage
+				.postamat__search
+					input(type="text" placeholder="Поиск")
+					button
+						img(src="img/search.svg" alt="Search")
+				form(action="#").postamat__filter
+					input(type="radio" checked name="filter")#filterPrice
+					label(for="filterPrice").filter__item.filter__price
+						span По цене
+						input(type="checkbox" name="upDown")
+						img(src="img/filter.svg" alt="filter")
+					input(type="radio" name="filter")#filterCool
+					label(for="filterCool").filter__item.filter__item_active.filter__cool
+						span По раритетности
+						input(type="checkbox" name="upDown")
+						img(src="img/filter.svg" alt="filter")
+					button.filter__reload
+						img(src="img/reload.svg" alt="filter")
+						span Обновить
+
+				hr
+
+				.storage__empty
+					h3 Инвентарь пуст
+					p Купите предметы в магазине или пополните <br />через свой инвентарь в стиме
+					a(href="shop.html") В магазин
+
+						
+
+
+
+		.section-right__item
+			include chat.pug

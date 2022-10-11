@@ -81,7 +81,7 @@
           </ul>
         </div>
         <div class="header__right">
-          <a class="header__coins" href="#">
+          <button class="header__coins" onclick="openPopup('add-coins')">
             <img src="img/header__coins.svg" alt="Coins"><span>6480</span>
             <div class="ico">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@
                 fill="#F5AD57" />
               </svg>
             </div>
-          </a>
+          </button>
           <a class="header__user" href="#">
             <img src="img/user.jpeg" alt="User"><span>Volaratice</span>
           </a>
@@ -747,8 +747,803 @@
     </section>
   </main>
   <!-- ** FOOTER ** -->
+  <div class="popup popup-fair-game">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Честная игра</h2>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="popup-fair-game__border">
+        <h3>Данные раунда</h3>
+        <ul>
+          <li>
+            <p><span>Джекпот:  </span>235900</p>
+          </li>
+          <li>
+            <p><span>Hash:  </span>fb433ac0c175de6ce49105ae6f8b2050bcc7b17deaf41af83a1</p>
+          </li>
+          <li>
+            <p><span>Salt:  </span>51df3b21ac453da53820hfcb7m</p>
+          </li>
+        </ul>
+      </div>
+      <p>Перед началом каждой игры <span>случайным образом</span>генерируются (32 случайных символа) и число, на котором закончится игра.</p>
+      <br>
+      <p>Они складываются между собой и хешируются с помощью sha256, после чего этот хэш отображается <span>до того как начнется игра</span>.</p>
+      <br>
+      <p>В конце игры можно увидеть соль, с помощью которой была произведена генерация, и убедиться, что хэш не менялся и все совпадает</p>
+      <button class="popup__close">Проверить игру</button>
+    </div>
+  </div>
+  <div class="popup popup-add-coins">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пополнение баланса</h2>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="popup-add-coins__var">
+        <button class="var__item" onclick="openPopup('add-coins-pin-code')">Eu PinCode</button>
+        <button class="var__item" onclick="openPopup('add-coins-balance')">Eu Gift</button>
+        <button class="var__item" onclick="openPopup('add-coins-skins')">Eu Gift</button>
+      </div>
+      <div class="popup-add-coins__game">
+        <button class="game__item">
+          <img src="img/dota.png" alt="Game">
+        </button>
+        <button class="game__item">
+          <img src="img/rust.png" alt="Game">
+        </button>
+        <button class="game__item">
+          <img src="img/csgo.png" alt="Game">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-pin-code">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пин-код <sub>(пин код для удачи 1111 - 1111 - 1111)</sub></h2>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <form action="#">
+        <label class="popup-add-coins-pin-code__input input-pincode"><span>Пин-код пополнения:</span>
+          <input type="text" placeholder="XXXX - XXXX - XXXX" required minlength="12">
+        </label>
+        <button onclick="openPopup('add-coins-pin-code-checking');setTimeout(()=&gt;{openPopupChecking('add-coins-pin-code', 'add-coins-pin-code-success', 'add-coins-pin-code-fail')},2000)" disabled>Применить купон</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-balance">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пополнение баланса</h2>
+      <a class="back" href="#" onclick="openPopup('add-coins')">
+        <img src="img/arr-td.svg" alt="Arr"><span>Способы оплаты</span>
+      </a>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <ul class="balance__cost">
+        <li>
+          <button>$1</button>
+        </li>
+        <li>
+          <button>$5</button>
+        </li>
+        <li>
+          <button>$10</button>
+        </li>
+        <li>
+          <button>$20</button>
+        </li>
+        <li>
+          <button>$40</button>
+        </li>
+        <li>
+          <button>$60</button>
+        </li>
+      </ul>
+      <div class="balance__sum">
+        <p>Зачисление на баланс:</p>
+        <div class="sum">
+          <img src="img/header__coins.svg" alt="Ico"><span>800</span>
+        </div>
+      </div>
+      <button onclick="openPopup('add-coins-balance-linking')">Перейти к оплате</button>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-balance-linking">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пополнение баланса</h2>
+      <p>Перенаправление..</p>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-pin-code-checking">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пин-код</h2>
+      <div class="checking-code"><span>Проверка кода</span>
+        <div class="load">
+          <div class="load__line"></div>
+          <div class="load__line"></div>
+          <div class="load__line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-pin-code-success">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пин-код</h2>
+      <p>Код успешно активирован!</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="code-success">
+        <div class="code-success__item"><span>$10</span>
+        </div>
+        <div class="code-success__center">
+          <img src="img/green-check.svg" alt="Ico">
+        </div>
+        <div class="code-success__item">
+          <img src="img/header__coins.svg" alt="Coins"><span>800</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-pin-code-fail">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Пин-код</h2>
+      <p>Код не действителен,
+        <br />следущая попытка через:</p>
+      <div class="code-fail">
+        <div class="code-fail__timer">5</div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-add-coins-skins">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Инвентарь Steam</h2>
+      <p>Выберите скины для пополнения</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="postamat__search">
+        <input type="text" placeholder="Поиск">
+        <button>
+          <img src="img/search.svg" alt="Search">
+        </button>
+      </div>
+      <form class="postamat__filter" action="#">
+        <input type="radio" checked name="filter" id="filterPrice">
+        <label class="filter__item filter__price" for="filterPrice"><span>По цене</span>
+          <input type="checkbox" name="upDown">
+          <img src="img/filter.svg" alt="filter">
+        </label>
+        <input type="radio" name="filter" id="filterCool">
+        <label class="filter__item filter__item_active filter__cool" for="filterCool"><span>По раритетности</span>
+          <input type="checkbox" name="upDown">
+          <img src="img/filter.svg" alt="filter">
+        </label>
+      </form>
+      <div class="skins__inner">
+        <div class="skins__block">
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+          <div class="skins__item">
+            <div class="clothes__cool clothes__cool_green"></div>
+            <div class="item__check">
+              <img src="img/green-check-sq.svg" alt="Photo">
+            </div>
+            <div class="item__photo">
+              <img src="img/skin.png" alt="Photo">
+            </div>
+            <div class="item__price">
+              <img src="img/header__coins.svg" alt="Photo"><span>3000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="skins__price">
+        <p>Зачисление на баланс:</p>
+        <div class="price__block"><span>$2.99</span>
+          <div class="ico">
+            <img src="img/change-arr.svg" alt="Ico">
+          </div>
+          <div class="coins">
+            <img src="img/header__coins.svg" alt="Ico"><span>800</span>
+          </div>
+        </div>
+      </div>
+      <div class="skins__button">
+        <button class="grey">
+          <img src="img/reload.svg" alt="ico"><span>Обновить</span>
+        </button>
+        <button><span>Пополнить скинами</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade popup-trade-waiting">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Трейд</h2>
+      <p>Ожидайте предложения от нашего бота:</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="popup-trade__bot">
+        <div class="bot__photo">
+          <img src="img/robot.png" alt="Photo">
+        </div>
+        <div class="bot__info">
+          <p>Михоелъ</p>
+          <div class="code">E24fvfns....ukhd742</div>
+        </div>
+      </div>
+      <div class="trade__buttons">
+        <button class="grey"><span>Через браузер</span>
+        </button>
+        <button class="steam"><span>Через Steam</span>
+          <img src="img/steam.svg" alt="Steam">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade popup-trade-error-hidden">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2><span>Ошибка</span>
+          <div class="img"><img src="img/error-red.svg" alt="Error"></div>
+        </h2>
+      <p>Ваш инвентарь в steam скрыт,
+        <br />откройте его у себя в настройках</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="trade__buttons">
+        <button class="grey"><span>Через браузер</span>
+        </button>
+        <button class="steam"><span>Через Steam</span>
+          <img src="img/steam.svg" alt="Steam">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade popup-trade-error-link">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2><span>Ошибка</span>
+          <div class="img"><img src="img/error-red.svg" alt="Error"></div>
+        </h2>
+      <p>Вы не добавили трейд-ссылку в профиле</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="trade__buttons">
+        <button class="grey mini"><span>К профилю</span>
+          <img src="img/arr-td.svg" alt="Arr">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade popup-trade-error-cancel">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2><span>Ошибка</span>
+          <div class="img"><img src="img/error-red.svg" alt="Error"></div>
+        </h2>
+      <p>Вы отменили трейд-предложение</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade popup-trade-good">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2 class="green"><span>Отлично</span>
+          <div class="img"><img src="img/green-check.svg" alt="Error"></div>
+        </h2>
+      <p>Баланс сайта пополнен</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-pull">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Статус ботов</h2>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="popup-pull__block">
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status">
+              <div class="img">
+                <img src="img/green-check.svg" alt="Ico">
+              </div>
+            </div>
+            <button class="item__repeat">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status">
+              <div class="load">
+                <div class="load__line"></div>
+                <div class="load__line"></div>
+                <div class="load__line"></div>
+              </div>
+            </div>
+            <button class="item__repeat">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status">
+              <img src="img/status-error.svg" alt="Fail">
+            </div>
+            <button class="item__repeat item__repeat_active">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status"></div>
+            <button class="item__repeat item__repeat_active">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status"></div>
+            <button class="item__repeat item__repeat_active">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status"></div>
+            <button class="item__repeat item__repeat_active">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup-pull__item">
+          <div class="item__top">
+            <div class="item__photo">
+              <img src="img/robot.png" alt="Robot">
+            </div>
+            <h3 class="item__name">Бот #6</h3>
+            <div class="item__status"></div>
+            <button class="item__repeat item__repeat_active">
+              <img src="img/reload.svg" alt="Reload"><span>Повторить</span>
+            </button>
+            <button class="item__delete">
+              <img src="img/cross.svg" alt="Delete">
+            </button>
+          </div>
+          <div class="item__bottom">
+            <ul class="item__skins">
+              <li class="item__skin">
+                <div class="clothes__cool clothes__cool_green"></div>
+                <img src="img/skin.png" alt="Skin">
+                <div class="item__count">2</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="popup-pull__buttons">
+        <button class="grey" onclick="openPopup('pull-search')"><span>Через браузер</span>
+        </button>
+        <button class="steam"><span>Через Steam</span>
+          <img src="img/steam.svg" alt="Steam">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-pull-search">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Статус ботов</h2>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="popup-pull-search__text">
+        <p>Подбираем ботов</p>
+        <div class="load">
+          <div class="load__line"></div>
+          <div class="load__line"></div>
+          <div class="load__line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade-link">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Трейд-ссылка</h2>
+      <p>Введите вашу трейд-ссылку Steam,
+        <br />с ней можно пополнять баланс скинами</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <form action="#">
+        <input class="trade-link__input" type="text" required>
+        <div class="trade-link__buttons">
+          <button onclick="if(document.querySelector('.popup-trade-link .trade-link__input').value.length &gt; 0) openPopup('trade-link-success')">Сохранить</button><a href="#">Где ее взять?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup-trade-link-success">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Трейд-ссылка</h2>
+      <p>У вас получилось!</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="success">
+        <div class="success__inner">
+          <img src="img/check-blue.svg" alt="Close"><span>АКТИВНО</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-trade-link-change">
+    <div class="popup__bgd"></div>
+    <div class="popup__content">
+      <h2>Трейд-ссылка</h2>
+      <p>Введите вашу трейд-ссылку Steam,
+        <br />с ней можно пополнять баланс скинами</p>
+      <div class="popup__cross popup__close">
+        <img src="img/cross.svg" alt="Close">
+      </div>
+      <div class="input">
+        <input class="trade-link__input" type="text" value="www.Старая трейд-ссылка.gg">
+        <img src="img/lock.svg" alt="Ico">
+      </div>
+      <div class="trade-link__buttons">
+        <button class="grey" onclick="openPopup('trade-link')">Изменить</button><a href="#">Где ее взять?</a>
+      </div>
+    </div>
+  </div>
   <footer></footer>
   <!-- ** FOOTER ** -->
+  <script src="https://unpkg.com/imask"></script>
   <!-- main JS -->
   <script src="js/app.min.js"></script>
 </body>

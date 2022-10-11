@@ -1,0 +1,654 @@
+.popup.popup-fair-game
+	.popup__bgd
+	.popup__content
+		h2 Честная игра
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		.popup-fair-game__border
+			h3 Данные раунда
+			ul
+				li
+					p
+						span Джекпот:  
+						| 235900
+				li
+					p
+						span Hash:  
+						| fb433ac0c175de6ce49105ae6f8b2050bcc7b17deaf41af83a1
+				li
+					p
+						span Salt:  
+						| 51df3b21ac453da53820hfcb7m
+		p Перед началом каждой игры 
+			span случайным образом
+			| генерируются (32 случайных символа) и число, на котором закончится игра.
+		br
+		p Они складываются между собой и хешируются с помощью sha256, после чего этот хэш отображается 
+			span до того как начнется игра
+			| .
+		br
+		p В конце игры можно увидеть соль, с помощью которой была произведена генерация, и убедиться, что хэш не менялся и все совпадает
+		button.popup__close Проверить игру
+
+.popup.popup-add-coins
+	.popup__bgd
+	.popup__content
+		h2 Пополнение баланса
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.popup-add-coins__var
+			button(onclick="openPopup('add-coins-pin-code')").var__item Eu PinCode
+			button(onclick="openPopup('add-coins-balance')").var__item Eu Gift
+			button(onclick="openPopup('add-coins-skins')").var__item Eu Gift
+		.popup-add-coins__game
+			button.game__item
+				img(src="img/dota.png" alt="Game")
+			button.game__item
+				img(src="img/rust.png" alt="Game")
+			button.game__item
+				img(src="img/csgo.png" alt="Game")
+
+
+.popup.popup-add-coins-pin-code
+	.popup__bgd
+	.popup__content
+		h2 Пин-код 
+			sub (пин код для удачи 1111 - 1111 - 1111)
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		form(action="#")
+			label.popup-add-coins-pin-code__input.input-pincode
+				span Пин-код пополнения:
+				input(type="text" placeholder="XXXX - XXXX - XXXX" required minlength="12")
+			//- button(type="submit") Применить купон
+			button(onclick="openPopup('add-coins-pin-code-checking');setTimeout(()=>{openPopupChecking('add-coins-pin-code', 'add-coins-pin-code-success', 'add-coins-pin-code-fail')},2000)" disabled) Применить купон
+
+.popup.popup-add-coins-balance
+	.popup__bgd
+	.popup__content
+		h2 Пополнение баланса
+		a(href="#" onclick="openPopup('add-coins')").back
+			img(src="img/arr-td.svg" alt="Arr")
+			span Способы оплаты
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		ul.balance__cost
+			li
+				button $1 
+			li
+				button $5 
+			li
+				button $10 
+			li
+				button $20 
+			li
+				button $40
+			li
+				button $60 
+
+		.balance__sum
+			p Зачисление на баланс:
+			.sum
+				img(src="img/header__coins.svg" alt="Ico")
+				span 800
+		button(onclick="openPopup('add-coins-balance-linking')") Перейти к оплате
+
+.popup.popup-add-coins-balance-linking
+	.popup__bgd
+	.popup__content
+		h2 Пополнение баланса
+		
+		p Перенаправление..
+
+.popup.popup-add-coins-pin-code-checking
+	.popup__bgd
+	.popup__content
+		h2 Пин-код
+		//- .popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.checking-code
+			span Проверка кода
+			.load
+				.load__line
+				.load__line
+				.load__line
+
+
+.popup.popup-add-coins-pin-code-success
+	.popup__bgd
+	.popup__content
+		h2 Пин-код
+		p Код успешно активирован!
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.code-success
+			.code-success__item
+				span $10
+			.code-success__center
+				img(src="img/green-check.svg" alt="Ico")
+			.code-success__item
+				img(src="img/header__coins.svg" alt="Coins")
+				span 800
+
+.popup.popup-add-coins-pin-code-fail
+	.popup__bgd
+	.popup__content
+		h2 Пин-код
+		p Код не действителен, <br />следущая попытка через:
+		//- .popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.code-fail
+			.code-fail__timer 5
+
+
+
+.popup.popup-add-coins-skins
+	.popup__bgd
+	.popup__content
+		h2 Инвентарь Steam
+		p Выберите скины для пополнения
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.postamat__search
+			input(type="text" placeholder="Поиск")
+			button
+				img(src="img/search.svg" alt="Search")
+		form(action="#").postamat__filter
+			input(type="radio" checked name="filter")#filterPrice
+			label(for="filterPrice").filter__item.filter__price
+				span По цене
+				input(type="checkbox" name="upDown")
+				img(src="img/filter.svg" alt="filter")
+			input(type="radio" name="filter")#filterCool
+			label(for="filterCool").filter__item.filter__item_active.filter__cool
+				span По раритетности
+				input(type="checkbox" name="upDown")
+				img(src="img/filter.svg" alt="filter")
+
+		.skins__inner
+			.skins__block
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+				.skins__item
+					.clothes__cool.clothes__cool_green
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Photo")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Photo")
+						span 3000
+		hr
+		.skins__price
+			p Зачисление на баланс:
+			.price__block
+				span $2.99
+				.ico
+					img(src="img/change-arr.svg" alt="Ico")
+				.coins
+					img(src="img/header__coins.svg" alt="Ico")
+					span 800
+		.skins__button
+			button.grey
+				img(src="img/reload.svg" alt="ico")
+				span Обновить
+			button
+				span Пополнить скинами
+
+.popup.popup-trade.popup-trade-waiting
+	.popup__bgd
+	.popup__content
+		h2 Трейд
+		p Ожидайте предложения от нашего бота:
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		.popup-trade__bot
+			.bot__photo
+				img(src="img/robot.png" alt="Photo")
+			.bot__info
+				p Михоелъ
+				.code E24fvfns....ukhd742
+		.trade__buttons
+			button.grey
+				span Через браузер
+			button.steam
+				span Через Steam
+				img(src="img/steam.svg" alt="Steam")
+
+.popup.popup-trade.popup-trade-error-hidden
+	.popup__bgd
+	.popup__content
+		h2
+			span Ошибка
+			.img
+				img(src="img/error-red.svg" alt="Error")
+		p Ваш инвентарь в steam скрыт, <br />откройте его у себя в настройках
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		.trade__buttons
+			button.grey
+				span Через браузер
+			button.steam
+				span Через Steam
+				img(src="img/steam.svg" alt="Steam")
+
+.popup.popup-trade.popup-trade-error-link
+	.popup__bgd
+	.popup__content
+		h2
+			span Ошибка
+			.img
+				img(src="img/error-red.svg" alt="Error")
+		p Вы не добавили трейд-ссылку в профиле
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		.trade__buttons
+			button.grey.mini
+				span К профилю
+				img(src="img/arr-td.svg" alt="Arr")
+
+.popup.popup-trade.popup-trade-error-cancel
+	.popup__bgd
+	.popup__content
+		h2
+			span Ошибка
+			.img
+				img(src="img/error-red.svg" alt="Error")
+		p Вы отменили трейд-предложение
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+.popup.popup-trade.popup-trade-good
+	.popup__bgd
+	.popup__content
+		h2.green
+			span Отлично
+			.img
+				img(src="img/green-check.svg" alt="Error")
+		p Баланс сайта пополнен
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+
+
+
+
+
+.popup.popup-pull
+	.popup__bgd
+	.popup__content
+		h2 Статус ботов
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+
+		.popup-pull__block
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+						.img
+							img(src="img/green-check.svg" alt="Ico")
+					button.item__repeat
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+						.load
+							.load__line
+							.load__line
+							.load__line
+					button.item__repeat
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+						img(src="img/status-error.svg" alt="Fail")
+					button.item__repeat.item__repeat_active
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+					button.item__repeat.item__repeat_active
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+					button.item__repeat.item__repeat_active
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+					button.item__repeat.item__repeat_active
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+			.popup-pull__item
+				.item__top
+					.item__photo
+						img(src="img/robot.png" alt="Robot")
+					h3.item__name Бот #6
+					.item__status
+					button.item__repeat.item__repeat_active
+						img(src="img/reload.svg" alt="Reload")
+						span Повторить
+					button.item__delete
+						img(src="img/cross.svg" alt="Delete")
+				.item__bottom
+					ul.item__skins
+						li.item__skin
+							.clothes__cool.clothes__cool_green
+							img(src="img/skin.png" alt="Skin")
+							.item__count 2
+
+		hr
+		.popup-pull__buttons
+			button(onclick="openPopup('pull-search')").grey
+				span Через браузер
+			button.steam
+				span Через Steam
+				img(src="img/steam.svg" alt="Steam")
+
+.popup.popup-pull-search
+	.popup__bgd
+	.popup__content
+		h2 Статус ботов
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		.popup-pull-search__text
+			p Подбираем ботов
+			.load
+				.load__line
+				.load__line
+				.load__line
+
+
+
+
+
+
+.popup.popup-trade-link
+	.popup__bgd
+	.popup__content
+		h2 Трейд-ссылка
+		p Введите вашу трейд-ссылку Steam, <br />с ней можно пополнять баланс скинами
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		
+		form(action="#")
+
+			input(type="text" required).trade-link__input
+
+			.trade-link__buttons
+				button(onclick="if(document.querySelector('.popup-trade-link .trade-link__input').value.length > 0) openPopup('trade-link-success')") Сохранить
+				//- button(onclick="openPopup('trade-link-success')") Сохранить
+				a(href="#") Где ее взять?
+
+.popup.popup-trade-link-success
+	.popup__bgd
+	.popup__content
+		h2 Трейд-ссылка
+		p У вас получилось!
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		
+		.success
+			.success__inner
+				img(src="img/check-blue.svg" alt="Close")
+				span АКТИВНО
+
+.popup.popup-trade-link-change
+	.popup__bgd
+	.popup__content
+		h2 Трейд-ссылка
+		p Введите вашу трейд-ссылку Steam, <br />с ней можно пополнять баланс скинами
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		
+		.input
+			input(type="text" value="www.Старая трейд-ссылка.gg").trade-link__input
+			img(src="img/lock.svg" alt="Ico")
+
+		.trade-link__buttons
+			button(onclick="openPopup('trade-link')").grey Изменить
+			a(href="#") Где ее взять?
+
+
+
