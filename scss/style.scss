@@ -1488,11 +1488,20 @@ main{
 		position: absolute;
 		top: 100%;
 		right: 30px;
-		z-index: 2;
+		z-index: 10;
 		padding: 10px;
 		opacity: 0;
 		visibility: hidden;
 		transition: all .3s ease;
+
+		.header__user,
+		.header__coins,
+		.header__socials,
+		.header__support,
+		.header__volume{
+			display: none;
+		}
+
 		&_active{
 			opacity: 1;
 			visibility: visible;
@@ -1960,6 +1969,8 @@ section{
 	&__coins{
 		display: flex;
 		align-items: center;
+		white-space: nowrap;
+		margin-right: 5px;
 		span{
 			margin-left: 6px;
 			font-weight: 700;
@@ -3384,6 +3395,17 @@ section{
 .table{
 	.td{
 		width: 100%;
+		&__coins{
+			display: flex;
+			align-items: center;
+			span{
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 15px;
+				color: #F8F8F8;
+				margin-left: 6px;
+			}
+		}
 		&:nth-child(1){
 			padding-left: 20px;
 			// min-width: 180px;
@@ -3515,18 +3537,6 @@ section{
 			font-size: 14px;
 			line-height: 15px;
 			color: #FFFFFF;
-		}
-		&:nth-child(5),
-		&:nth-child(4){
-			display: flex;
-			align-items: center;
-			span{
-				font-weight: 500;
-				font-size: 14px;
-				line-height: 15px;
-				color: #F8F8F8;
-				margin-left: 6px;
-			}
 		}
 		&:nth-child(6){
 			position: relative;
@@ -4092,9 +4102,12 @@ section{
 			padding-bottom: 0;
 			position: relative;
 			.item__skin{
+				max-width: 176px;
+				margin: 0 auto;
 				img{
 					display: block;
 					margin: 0 auto;
+					width: 100%;
 				}
 			}
 			p{
@@ -5063,6 +5076,7 @@ section{
 			width: 100%;
 			max-width: 160px;
 			margin-left: 8px;
+			white-space: nowrap;
 			span{
 				font-weight: 500;
 				font-size: 12px;
@@ -5129,6 +5143,7 @@ section{
 				font-size: 14px;
 				line-height: 15px;
 				color: #A2ABC5;
+				white-space: nowrap;
 				span{
 					color: #E8A14E;
 				}
@@ -5238,6 +5253,7 @@ section{
 			border-radius: 10px;
 			padding: 15px;
 			padding-bottom: 30px;
+			white-space: nowrap;
 			bottom: 100%;
 			margin-bottom: 30px;
 			p{

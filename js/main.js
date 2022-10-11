@@ -318,6 +318,7 @@ document.querySelectorAll('.clothes__head').forEach(function (clHead) {
 for( let tab of document.querySelectorAll('.tabs li') ){
 
   tab.addEventListener('click', function (e) {
+    e.preventDefault();
 
     document.querySelectorAll('.tabs li').forEach(item => { item.classList.remove('li_active') })
     this.classList.add('li_active')

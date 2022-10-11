@@ -12,9 +12,45 @@ block body
 
 			section.section-map
 
-				.trajectory
-					.plane
-						img(src="img/plane.png" alt="Plane" width="54")
+				.section-map__top
+					.section-map__game-is Игра #32875002
+					.section-map__code
+						img(src="img/shield-map.svg" alt="Ico")
+						span E24n...84dke
+
+				.section-map__map
+					img(src="img/map.png" alt="Map").map-img
+					.map__points
+						.point(style="left: 500px; top: 200px")
+							.point__winner
+								.line
+								.circle1(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.4) 100%);")
+								.circle2(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.1) 100%);")
+								.dot(style="background: #92C145")
+							.point__group
+								.point__photo
+									img(src="img/user2.png" alt="Photo")
+									<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.08361 7.08363C15.4141 -1.24683 28.9204 -1.24683 37.2509 7.08363C45.5813 15.4141 45.5813 28.9204 37.2509 37.2509L26.4099 48.0919C24.0667 50.435 20.2677 50.435 17.9246 48.0919L7.08361 37.2509C-1.24685 28.9204 -1.24685 15.4141 7.08361 7.08363Z" fill="#92C145"/></svg>
+								.point__dot
+									.line(style="background: #92C145")
+									.dot(style="background: #92C145")
+						.point.point__nearly(style="left: 600px; top: 400px")
+							.point__winner
+								.line
+								.circle1(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.4) 100%);")
+								.circle2(style="background: radial-gradient(50% 50% at 50% 50%, rgba(245, 173, 87, 0) 0%, rgba(245, 173, 87, 0.1) 100%);")
+								.dot(style="background: #F5AD57")
+							.point__group
+								.point__photo
+									img(src="img/user.jpeg" alt="Photo")
+									<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.08361 7.08363C15.4141 -1.24683 28.9204 -1.24683 37.2509 7.08363C45.5813 15.4141 45.5813 28.9204 37.2509 37.2509L26.4099 48.0919C24.0667 50.435 20.2677 50.435 17.9246 48.0919L7.08361 37.2509C-1.24685 28.9204 -1.24685 15.4141 7.08361 7.08363Z" fill="#F5AD57"/></svg>
+								.point__dot
+									.line(style="background: #F5AD57")
+									.dot(style="background: #F5AD57")
+
+					.trajectory
+						.plane
+							img(src="img/plane.png" alt="Plane" width="54")
 
 				.notice-bottom
 					span Проигрыш

@@ -1,0 +1,695 @@
+@media screen and (max-width:1550px) {
+  .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 4;
+    grid-column-end: 5
+  }
+}
+@media screen and (max-width:1400px) {
+  .section-block-information {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3,1fr)
+  }
+  .section-block-newcomer .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 3;
+    grid-column-end: 4
+  }
+  .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 3;
+    grid-column-end: 4
+  }
+}
+@media screen and (max-width:1280px) {
+  .section-block {
+    margin: 10px 0
+  }
+  .section-block-information {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+  .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 2;
+    grid-column-end: 3
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .header__right {
+    margin-left: 2%
+  }
+  .header__volume .volume__block {
+    position: absolute
+  }
+  .header__lang {
+    margin-left: 20px
+  }
+  .header__volume {
+    margin-right: 10px
+  }
+  .aside {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 0
+  }
+  .aside__list li:first-child a:before {
+    display: none
+  }
+  .aside__center {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-top: 0;
+    margin-left: auto;
+    padding: 0 20px
+  }
+  .aside__author img {
+    margin-bottom: 5px;
+    width: 20px;
+    height: 20px
+  }
+  .aside__plane span {
+    margin-top: 6px
+  }
+  .aside__fight {
+    height: auto
+  }
+  .aside__author {
+    padding: 10px
+  }
+  .aside__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  .aside__list a {
+    margin-bottom: 0;
+    margin-right: 20px
+  }
+  .section-blocks {
+    margin: 0
+  }
+  .section-block-information {
+    margin-left: 0;
+    margin-right: 0
+  }
+  .tabs__block {
+    height: 300px
+  }
+  .tabs__item big {
+    margin-top: 0;
+    height: 95%
+  }
+  .tabs__item {
+    height: 100%
+  }
+  .section-block {
+    height: auto;
+    padding-bottom: 20px;
+    padding: 10px
+  }
+  .tabs__item big {
+    margin-top: 10px
+  }
+  .pererab .postamat__block {
+    height: 300px
+  }
+  .section-right {
+    height: auto;
+    padding-bottom: 20px
+  }
+  .top-gamer__trade-link .trade-link__check {
+    margin-left: 15px
+  }
+  .section-right {
+    margin: 0;
+    margin-top: 10px
+  }
+  section {
+    margin: 10px 0
+  }
+  .section-shop__skins {
+    max-height: 500px
+  }
+  .postamat__block {
+    height: 300px
+  }
+  .section-terms__content {
+    max-height: 300px
+  }
+  .section-shop__list-games {
+    max-height: 300px
+  }
+  .section-right__players {
+    height: 300px
+  }
+  .section-map {
+    height: auto;
+    margin: 10px 0
+  }
+  .section-faq__block {
+    max-height: 300px
+  }
+  .section-fight__lft,
+  .section-fight__rht {
+    height: 700px;
+    overflow: hidden
+  }
+}
+@media screen and (max-width:1024px) {
+  .header__socials,
+  .header__support,
+  .header__volume {
+    display: none
+  }
+  .header .burger__menu .header__support,
+  .header .burger__menu .header__volume {
+    display: block;
+    margin: 10px 0
+  }
+  .header .burger__menu .header__socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px 0;
+    margin-left: 0
+  }
+  .header__volume .volume__block {
+    top: 0
+  }
+  .header__volume {
+    position: relative
+  }
+  .header .burger__menu .header__socials a {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 50%
+  }
+  .section-history__item {
+    overflow: auto
+  }
+  .section-history__item .item__status img {
+    margin-left: 5px
+  }
+  .section-history__top {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .section-history__top button {
+    margin: 10px 0;
+    width: 100%
+  }
+  .section-history .section-history__all {
+    max-width: 100%
+  }
+  .section-history__item .item__list {
+    width: auto
+  }
+  .section-history__item .item__delete {
+    opacity: 1
+  }
+  .section-history__item .item__list .li__name {
+    top: 0;
+    height: 60px;
+    z-index: 2
+  }
+}
+@media screen and (max-width:768px) {
+  .section-faq__catalog {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px
+  }
+  .section-faq__catalog .catalog__item {
+    margin: 0
+  }
+  .section-fight {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .section-fight__lft {
+    margin-right: 0;
+    margin-bottom: 10px
+  }
+  .section-fight__center {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px
+  }
+  .section-fight__center .center__running .timer span {
+    font-size: 18px
+  }
+  .section-shop__list-games {
+    overflow: auto;
+    padding: 10px
+  }
+  .section-shop__top .create-game p {
+    margin-bottom: 10px
+  }
+  .section-shop__list-games .list-games__item {
+    min-width: 750px
+  }
+  .section-shop__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .section-shop__top .clothes-shop {
+    margin-left: 0;
+    width: 100%;
+    min-height: 70px;
+    max-width: 100%;
+    padding: 15px
+  }
+  .section-shop__top .create-game {
+    min-height: 70px;
+    margin-bottom: 10px;
+    padding: 15px
+  }
+  .section-shop__skins .skins__back {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  }
+  .section-shop__skins .skins__top {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .section-shop__skins .skins__block {
+    margin-top: 20px
+  }
+  .section-shop__skins h1 {
+    margin-top: 10px
+  }
+  .section-shop__top .clothes-shop p br {
+    display: none
+  }
+  .section-shop__top {
+    height: auto
+  }
+  .section-shop__skins .skins__block {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+  .header__coins,
+  .header__user {
+    display: none
+  }
+  .header .burger__menu .header__coins {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  }
+  .header .burger__menu a.header__user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px 0
+  }
+  .tabs {
+    overflow: auto;
+    padding-bottom: 5px
+  }
+  .tabs a {
+    padding-bottom: 10px
+  }
+  .tabs__item {
+    overflow: auto
+  }
+  .tabs__item .table {
+    min-width: 700px
+  }
+  .tabs li {
+    margin-right: 30px
+  }
+  .section-block-newcomer .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 2;
+    grid-column-end: 3
+  }
+}
+@media screen and (max-width:576px) {
+  .section-faq__catalog {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px
+  }
+  .section-faq__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .section-faq__top {
+    padding: 15px
+  }
+  .section-faq__top .dis,
+  .section-faq__top .vk {
+    margin-right: 10px;
+    margin-left: 0
+  }
+  .section-faq__top .top__rht {
+    margin-top: 15px
+  }
+  .section-faq__content {
+    padding: 10px
+  }
+  @-webkit-keyframes attackLeft {
+    from {
+      left: 0;
+      opacity: 0
+    }
+    to {
+      left: 20px;
+      opacity: 1
+    }
+  }
+  @keyframes attackLeft {
+    from {
+      left: 0;
+      opacity: 0
+    }
+    to {
+      left: 20px;
+      opacity: 1
+    }
+  }
+  @-webkit-keyframes attackRight {
+    from {
+      right: 0;
+      opacity: 0
+    }
+    to {
+      right: 20px;
+      opacity: 1
+    }
+  }
+  @keyframes attackRight {
+    from {
+      right: 0;
+      opacity: 0
+    }
+    to {
+      right: 20px;
+      opacity: 1
+    }
+  }
+  .section-fight__select button,
+  .section-fight__select-hit button {
+    padding: 0 5px;
+    font-size: 12px
+  }
+  .section-block-newcomer .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: 2
+  }
+  .section-right__airdrop .airdrop__sleepers ul button {
+    font-size: 13px
+  }
+  .section-right__airdrop {
+    padding: 10px
+  }
+  .section-right__airdrop .airdrop__sleepers {
+    padding: 10px
+  }
+  .section-right__airdrop .airdrop__move ul {
+    padding: 0 10px
+  }
+  .section-right__airdrop .move__random,
+  .section-right__airdrop .move__submit {
+    height: 35px
+  }
+  .section-right__airdrop .move__random span,
+  .section-right__airdrop .move__submit span {
+    font-size: 12px
+  }
+  .section-right__airdrop .airdrop__fly .time {
+    font-size: 18px
+  }
+  .section-right__airdrop .airdrop__bank,
+  .section-right__airdrop .airdrop__fly {
+    padding: 10px
+  }
+  .section-right__airdrop .airdrop__bank {
+    margin-left: 5px
+  }
+  .section-map__game-is {
+    font-size: 10px;
+    padding: 5px
+  }
+  .section-map__code span {
+    font-size: 10px
+  }
+  .section-map__code {
+    padding: 5px
+  }
+  .section-terms__top img {
+    width: 40px;
+    margin-bottom: 0
+  }
+  .section-terms {
+    padding: 10px
+  }
+  .section-terms__top {
+    padding: 10px
+  }
+  .section-terms__top h1 {
+    font-size: 18px
+  }
+  .section-shop__top .create-game {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .section-shop__top .create-game__button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px
+  }
+  .section-shop__skins {
+    padding: 20px
+  }
+  .section-shop__skins .skins__item .item__skin {
+    max-width: 130px
+  }
+  .section-shop__skins .skins__item .item__buy {
+    height: 35px;
+    width: 105px
+  }
+  .section-shop__skins .skins__item .item__buy button span {
+    font-size: 13px
+  }
+  .section-shop__skins .skins__item .item__buy .sale {
+    font-size: 11px;
+    top: -15px
+  }
+  .section-history__center {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse
+  }
+  .section-history__sort {
+    margin: 0 auto;
+    margin-bottom: 20px
+  }
+  .header__lang .lang__list {
+    left: -40px
+  }
+  .section-history__top button {
+    padding: 20px 10px
+  }
+  .section-history__top p {
+    font-size: 14px
+  }
+  .section-history__top .cost {
+    font-size: 17px
+  }
+  .section-history__top button:after {
+    left: 10px
+  }
+  .popup__content {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px)
+  }
+  .balance__top {
+    margin-bottom: 10px
+  }
+  .postamat__filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .postamat__filter .filter__reload {
+    margin-left: 0
+  }
+  .postamat__filter .filter__item {
+    margin-bottom: 10px
+  }
+  .postamat__block {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+  .section-right__chatting {
+    height: 600px;
+    margin-bottom: 150px
+  }
+  .section-right__resources .resources__button {
+    margin-top: 10px
+  }
+  .section-right__rules {
+    bottom: 165px
+  }
+  .postamat__search input {
+    height: 40px
+  }
+  .section-right__resources {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .section-right__rules {
+    height: 200px;
+    padding: 10px
+  }
+  .section-right__rules h2 {
+    margin-bottom: 15px;
+    font-size: 16px
+  }
+  .section-right__rules h3 {
+    margin: 15px 0
+  }
+  .section-right__rules p {
+    font-size: 12px;
+    line-height: 18px
+  }
+  .header__logo {
+    font-size: 14px
+  }
+  .header__logo .ico {
+    margin-right: 0
+  }
+  .header .wrapper {
+    padding-left: 15px;
+    padding-right: 15px
+  }
+  .section-block-information {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1,1fr)
+  }
+  .top-gamer {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 0;
+    grid-column-end: 1;
+    padding: 10px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .top-gamer__vertical {
+    width: 100%;
+    height: auto;
+    margin-right: 0
+  }
+  .top-gamer__vertical span {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    width: calc(100% + 20px);
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px
+  }
+  .top-gamer__info {
+    margin: 10px 0
+  }
+  .top-gamer__trade-link .trade-link__check {
+    margin-left: auto
+  }
+  .top-gamer__trade-link {
+    width: 100%
+  }
+  .aside__center {
+    padding: 0;
+    padding-left: 10px
+  }
+  .aside__fight img {
+    width: 20px;
+    height: 20px
+  }
+  .aside__plane img {
+    width: 30px
+  }
+  .aside__author {
+    padding: 5px
+  }
+  .aside__plane {
+    margin: 0 5px
+  }
+  .aside__list svg {
+    width: 15px;
+    height: 15px
+  }
+}
+@media screen and (max-width:360px) {
+  .aside__list a {
+    margin-right: 7px
+  }
+  .section-right__airdrop .fly__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .section-fight__persone .persone__start {
+    margin-left: -10px
+  }
+}
