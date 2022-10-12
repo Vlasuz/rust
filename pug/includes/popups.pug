@@ -107,8 +107,6 @@
 	.popup__bgd
 	.popup__content
 		h2 Пин-код
-		//- .popup__cross.popup__close
-			img(src="img/cross.svg" alt="Close")
 
 		.checking-code
 			span Проверка кода
@@ -140,8 +138,6 @@
 	.popup__content
 		h2 Пин-код
 		p Код не действителен, <br />следущая попытка через:
-		//- .popup__cross.popup__close
-			img(src="img/cross.svg" alt="Close")
 
 		.code-fail
 			.code-fail__timer 5
@@ -618,7 +614,6 @@
 
 			.trade-link__buttons
 				button(onclick="if(document.querySelector('.popup-trade-link .trade-link__input').value.length > 0) openPopup('trade-link-success')") Сохранить
-				//- button(onclick="openPopup('trade-link-success')") Сохранить
 				a(href="#") Где ее взять?
 
 .popup.popup-trade-link-success
@@ -651,4 +646,372 @@
 			a(href="#") Где ее взять?
 
 
+
+
+
+.popup.popup-entry-coins
+	.popup__bgd
+	.popup__content
+		h2 Комната
+		p.subtitle Тип ставки: 
+			span Валютой
+		.popup__cross.popup__close
+			img(src="img/cross.svg" alt="Close")
+		
+		.popup-entry-coins__info
+			p Ставка в этой комнате
+			.info__coins
+				img(src="img/header__coins.svg" alt="Ico")
+				span 180
+
+		button Внести ставку
+		button(disabled) Недостаточно средств
+
+.popup.popup-entry-clothes
+	.popup__bgd
+	.popup__content
+		.popup__content_lft
+			h2 Новая комната
+			.popup__cross.popup__close
+				img(src="img/cross.svg" alt="Close")
+
+			.popup__content-item.popup__content-item_active.popup__content-item-clothes
+				.popup-new-room__zone
+					p Перетащите сюда скины для ставки
+					ul
+						//- li
+						//- 	.clothes__cool.clothes__cool_green
+						//- 	.li__delete
+						//- 		img(src="img/cross.svg" alt="Close")
+						//- 	.li__photo
+						//- 		img(src="img/skin.png" alt="Photo")
+
+				form(action="#")
+					.inputs
+						.inputs__item.inputs__item-sum
+							p Сумма ставки:
+							.input
+								img(src="img/header__coins.svg" alt="Ico")
+								span.input__sum 0
+						.inputs__item.inputs__item-opp
+							p Оппонент:
+							.input
+								.input__photo
+									img(src="img/user.jpeg" alt="User")
+								.input__coins
+									img(src="img/header__coins.svg" alt="Ico")
+									span 810
+					button(disabled) Внести ставку
+
+		.popup__content_rht
+			h2 Инвентарь сайта
+			.popup__cross.popup__close
+				img(src="img/cross.svg" alt="Close")
+
+			.popup-new-room__sort
+				span Сортировка
+				.select
+					select
+						option По цене
+						option По дате
+
+			ul.popup-new-room__list
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+
+.popup.popup-new-room
+	.popup__bgd
+	.popup__content
+		.popup__content_lft
+			h2 Новая комната
+			.popup__cross.popup__close
+				img(src="img/cross.svg" alt="Close")
+
+			.popup-new-room__switcher
+				ul
+					li.li_active
+						a(href="#") На валюту
+					li
+						a(href="#") На скины
+
+			.popup__content-item.popup__content-item_active
+				form(action="#")
+					.inputs
+						.inputs__item.inputs__item-sum
+							p Сумма ставки:
+							.input
+								img(src="img/header__coins.svg" alt="Ico")
+								input(type="text" placeholder="0")
+						.inputs__item.inputs__item-have
+							p На балансе:
+							.input
+								img(src="img/header__coins.svg" alt="Ico")
+								span 358
+					button(disabled) Создать игру
+
+			.popup__content-item.popup__content-item-clothes
+				.popup-new-room__zone
+					p Перетащите сюда скины для ставки
+					ul
+
+				.inputs__item.inputs__item-have
+					p Итоговая сумма ставки:
+					.input
+						img(src="img/header__coins.svg" alt="Ico")
+						span 358
+				button(disabled) Создать игру
+
+		.popup__content_rht
+			h2 Инвентарь сайта
+			.popup__cross.popup__close
+				img(src="img/cross.svg" alt="Close")
+
+			.popup-new-room__sort
+				span Сортировка
+				.select
+					select
+						option По цене
+						option По дате
+
+			ul.popup-new-room__list
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
+				li.popup-new-room__item
+					.clothes__cool.clothes__cool_green
+					.li__delete
+						img(src="img/cross.svg" alt="Close")
+					.item__check
+						img(src="img/green-check-sq.svg" alt="Check")
+					.item__photo
+						img(src="img/skin.png" alt="Photo")
+					.item__price
+						img(src="img/header__coins.svg" alt="Coin")
+						span 3000
 

@@ -17,7 +17,7 @@ block body
 						.players
 							img(src="img/users.svg" alt="Ico")
 							span 176
-						button.create-game__button Создать игру
+						button(onclick="openPopup('new-room')").create-game__button Создать игру
 					.clothes-shop
 						p Магазин <br />костюмов
 						img(src="img/clothes-shop.svg" alt="Ico")
@@ -31,7 +31,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button(onclick="openPopup('entry-coins')").item__button
 							span Играть за
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
@@ -44,75 +44,6 @@ block body
 							.user__name Victorius
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
-					.list-games__item.list-games__item_open-clothes
-						.item__type.item__type_clothes
-							img(src="img/clothes.svg" alt="Ico")
-						ul.item__clothes
-							li
-								.clothes__cool.clothes__cool_grey
-								img(src="img/weapon.png" alt="Photo")
-							li
-								.clothes__cool.clothes__cool_red
-								img(src="img/weapon.png" alt="Photo")
-							li
-								.clothes__cool.clothes__cool_green
-								img(src="img/weapon.png" alt="Photo")
-
-						.item__user
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
-							.user__name Amnesianna5360
-						.item__button
-							span Играть за
-							img(src="img/header__coins.svg" alt="Ico")
-							span 100
-						.item__user
-							.user__load
-							.user__name Victorius
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
-					.list-games__item
-						.item__type.item__type_clothes
-							img(src="img/clothes.svg" alt="Ico")
-						ul.item__clothes
-							li
-								.clothes__cool.clothes__cool_grey
-								img(src="img/weapon.png" alt="Photo")
-							li
-								.clothes__cool.clothes__cool_red
-								img(src="img/weapon.png" alt="Photo")
-							li
-								.clothes__cool.clothes__cool_green
-								img(src="img/weapon.png" alt="Photo")
-						.item__user
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
-							.user__name Amnesianna5360
-						.item__button
-							span Играть за
-							img(src="img/header__coins.svg" alt="Ico")
-							span 100
-						.item__user
-							.user__load
-							.user__name Victorius
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
-					.list-games__item
-						.item__type.item__type_coins
-							img(src="img/header__coins.svg" alt="Ico")
-						.item__user
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
-							.user__name Amnesianna5360
-						.item__button
-							span Играть за
-							img(src="img/header__coins.svg" alt="Ico")
-							span 100
-						.item__user
-							.user__load
-							.user__name Victorius
-							.user__photo
-								img(src="img/user.jpeg" alt="Photo")
 					.list-games__item
 						.item__type.item__type_clothes
 							img(src="img/clothes.svg" alt="Ico")
@@ -131,7 +62,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button(onclick="openPopup('entry-clothes')").item__button
 							span Играть за
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
@@ -157,7 +88,76 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button(onclick="openPopup('entry-clothes')").item__button
+							span Играть за
+							img(src="img/header__coins.svg" alt="Ico")
+							span 100
+						.item__user
+							.user__load
+							.user__name Victorius
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+					.list-games__item
+						.item__type.item__type_coins
+							img(src="img/header__coins.svg" alt="Ico")
+						.item__user
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+							.user__name Amnesianna5360
+						button(onclick="openPopup('entry-coins')").item__button
+							span Играть за
+							img(src="img/header__coins.svg" alt="Ico")
+							span 100
+						.item__user
+							.user__load
+							.user__name Victorius
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+					.list-games__item
+						.item__type.item__type_clothes
+							img(src="img/clothes.svg" alt="Ico")
+						ul.item__clothes
+							li
+								.clothes__cool.clothes__cool_grey
+								img(src="img/weapon.png" alt="Photo")
+							li
+								.clothes__cool.clothes__cool_red
+								img(src="img/weapon.png" alt="Photo")
+							li
+								.clothes__cool.clothes__cool_green
+								img(src="img/weapon.png" alt="Photo")
+
+						.item__user
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+							.user__name Amnesianna5360
+						button(onclick="openPopup('entry-coins')").item__button
+							span Играть за
+							img(src="img/header__coins.svg" alt="Ico")
+							span 100
+						.item__user
+							.user__load
+							.user__name Victorius
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+					.list-games__item
+						.item__type.item__type_clothes
+							img(src="img/clothes.svg" alt="Ico")
+						ul.item__clothes
+							li
+								.clothes__cool.clothes__cool_grey
+								img(src="img/weapon.png" alt="Photo")
+							li
+								.clothes__cool.clothes__cool_red
+								img(src="img/weapon.png" alt="Photo")
+							li
+								.clothes__cool.clothes__cool_green
+								img(src="img/weapon.png" alt="Photo")
+						.item__user
+							.user__photo
+								img(src="img/user.jpeg" alt="Photo")
+							.user__name Amnesianna5360
+						button(onclick="openPopup('entry-coins')").item__button
 							span Играть за
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
@@ -173,7 +173,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
 						.item__user
@@ -188,7 +188,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
 						.item__user
@@ -203,7 +203,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
 						.item__user
@@ -218,7 +218,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							img(src="img/header__coins.svg" alt="Ico")
 							span 100
 						.item__user
@@ -233,7 +233,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							.winner
 								img(src="img/header__coins.svg" alt="Ico")
 								span 100
@@ -251,7 +251,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							.winner
 								img(src="img/header__coins.svg" alt="Ico")
 								span 100
@@ -269,7 +269,7 @@ block body
 							.user__photo
 								img(src="img/user.jpeg" alt="Photo")
 							.user__name Amnesianna5360
-						.item__button
+						button.item__button
 							.winner
 								img(src="img/header__coins.svg" alt="Ico")
 								span 100

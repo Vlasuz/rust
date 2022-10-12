@@ -54,7 +54,7 @@
 						a(href="#") Бан чата
 					li.li__delete
 						a(href="#") Удалить
-		.chatting__item
+		.chatting__item.chatting__item_system
 			.item__photo
 				.photo
 					img(src="img/user.jpeg" alt="User")
@@ -213,7 +213,7 @@
 		label.textarea
 			input(placeholder="Сообщение" maxlength="150")
 			span.maxl 0/150
-		.smiles
+		button.smiles(onclick="document.querySelector('.section-right__smiles').classList.toggle('section-right__smiles_active')")
 			img(src="img/smile-1.png" alt="Smile")
 		button.send
 			img(src="img/send-message.svg" alt="Ico")

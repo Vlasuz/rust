@@ -78,6 +78,16 @@
     margin-left: auto;
     padding: 0 20px
   }
+  .aside__center {
+    height: auto;
+    margin-top: 0
+  }
+  .aside__author {
+    margin-top: 0
+  }
+  .aside__list .absolute-span {
+    display: none
+  }
   .aside__author img {
     margin-bottom: 5px;
     width: 20px;
@@ -102,7 +112,7 @@
   }
   .aside__list a {
     margin-bottom: 0;
-    margin-right: 20px
+    margin-right: 14px
   }
   .section-blocks {
     margin: 0
@@ -180,6 +190,16 @@
   .header__volume {
     display: none
   }
+  .popup-entry-clothes .popup__content,
+  .popup-new-room .popup__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
   .header .burger__menu .header__support,
   .header .burger__menu .header__volume {
     display: block;
@@ -235,6 +255,26 @@
   }
 }
 @media screen and (max-width:768px) {
+  .popup-entry-clothes__list,
+  .popup-new-room__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+  .popup-entry-clothes .inputs,
+  .popup-new-room .inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .popup-entry-clothes .inputs__item,
+  .popup-new-room .inputs__item {
+    margin: 10px 0
+  }
+  .popup-entry-clothes__zone,
+  .popup-new-room__zone {
+    margin-bottom: 0
+  }
   .section-faq__catalog {
     display: -ms-grid;
     display: grid;
@@ -358,6 +398,36 @@
   }
 }
 @media screen and (max-width:576px) {
+  .popup-add-coins .popup__content {
+    padding: 10px
+  }
+  .popup-add-coins-skins .skins__block {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+  .popup-add-coins-skins .skins__button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .popup-add-coins-skins .skins__button button {
+    margin: 10px 0
+  }
+  .popup-add-coins-skins .skins__price {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .popup-add-coins-skins .skins__price .price__block {
+    margin: 10px auto
+  }
+  .popup-add-coins-skins p {
+    text-align: center;
+    width: 100%
+  }
+  .popup-add-coins-skins .skins__price .coins {
+    margin-right: 0
+  }
   .section-faq__catalog {
     display: -ms-grid;
     display: grid;
