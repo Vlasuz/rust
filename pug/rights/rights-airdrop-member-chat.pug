@@ -9,18 +9,25 @@ section.section-right
 				span 176
 
 	.section-right__switcher
-		.section-right__item.section-right_active
+		include notice.pug
 
-			include notice.pug
+		.section-right__item.section-right_active
 
 			.section-right__airdrop
 				.airdrop__block
 					.airdrop__fly
 						.fly__top
 							p До вылета:
-							.time
-								span.min 20
-								span.sec .00
+							.timer
+								.min
+									span **
+								.sec
+									small.dot .
+									span **
+							script.
+								document.addEventListener('DOMContentLoaded', () => {
+									timeDeadlineFunc('Oct 14 2022 18:00:00 GMT+0300');
+								})
 						.fly__bottom
 							.fly__timer
 								img(src="img/line-for-right.svg" alt="Ico")
@@ -185,151 +192,4 @@ section.section-right
 
 
 		.section-right__item
-			.section-right__chatting
-				.chatting__block
-					.chatting__item
-						.item__photo
-							.photo
-								img(src="img/user.jpeg" alt="User")
-							.mark
-								img(src="img/twitch.svg" alt="Ico")
-						.item__inner
-							.item__top
-								h4.item__name Система
-								.item__muted
-									img(src="img/muted.svg" alt="Menu")
-								button.item__menu
-									img(src="img/chat-menu.svg" alt="Menu")
-								time.item__time 12:46
-							.item__text
-								p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-							ul.item__dropdown
-								li
-									a(href="#") Скрыть сообщение
-								li
-									a(href="#") Заглушить
-								li
-									a(href="#") Блокировать 1ч
-								li
-									a(href="#") Бан чата
-								li.li__delete
-									a(href="#") Удалить
-					.chatting__item.chatting__item_muted
-						.item__photo
-							.photo
-								img(src="img/user.jpeg" alt="User")
-							.mark
-								img(src="img/twitch.svg" alt="Ico")
-						.item__inner
-							.item__top
-								h4.item__name Система
-								.item__muted
-									img(src="img/muted.svg" alt="Menu")
-								button.item__menu
-									img(src="img/chat-menu.svg" alt="Menu")
-								time.item__time 12:46
-							.item__text
-								p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-							ul.item__dropdown
-								li
-									a(href="#") Скрыть сообщение
-								li
-									a(href="#") Заглушить
-								li
-									a(href="#") Блокировать 1ч
-								li
-									a(href="#") Бан чата
-								li.li__delete
-									a(href="#") Удалить
-					.chatting__item
-						.item__photo
-							.photo
-								img(src="img/user.jpeg" alt="User")
-							.mark
-								img(src="img/twitch.svg" alt="Ico")
-						.item__inner
-							.item__top
-								h4.item__name Система
-								.item__muted
-									img(src="img/muted.svg" alt="Menu")
-								button.item__menu
-									img(src="img/chat-menu.svg" alt="Menu")
-								time.item__time 12:46
-							.item__text
-								p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-							ul.item__dropdown
-								li
-									a(href="#") Скрыть сообщение
-								li
-									a(href="#") Заглушить
-								li
-									a(href="#") Блокировать 1ч
-								li
-									a(href="#") Бан чата
-								li.li__delete
-									a(href="#") Удалить
-					.chatting__item
-						.item__photo
-							.photo
-								img(src="img/user.jpeg" alt="User")
-							.mark
-								img(src="img/twitch.svg" alt="Ico")
-						.item__inner
-							.item__top
-								h4.item__name Система
-								.item__muted
-									img(src="img/muted.svg" alt="Menu")
-								button.item__menu
-									img(src="img/chat-menu.svg" alt="Menu")
-								time.item__time 12:46
-							.item__text
-								p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-							ul.item__dropdown
-								li
-									a(href="#") Скрыть сообщение
-								li
-									a(href="#") Заглушить
-								li
-									a(href="#") Блокировать 1ч
-								li
-									a(href="#") Бан чата
-								li.li__delete
-									a(href="#") Удалить
-					.chatting__item
-						.item__photo
-							.photo
-								img(src="img/user.jpeg" alt="User")
-							.mark
-								img(src="img/twitch.svg" alt="Ico")
-						.item__inner
-							.item__top
-								h4.item__name Система
-								.item__muted
-									img(src="img/muted.svg" alt="Menu")
-								button.item__menu
-									img(src="img/chat-menu.svg" alt="Menu")
-								time.item__time 12:46
-							.item__text
-								p Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!
-							ul.item__dropdown
-								li
-									a(href="#") Скрыть сообщение
-								li
-									a(href="#") Заглушить
-								li
-									a(href="#") Блокировать 1ч
-								li
-									a(href="#") Бан чата
-								li.li__delete
-									a(href="#") Удалить
-				.section-right__resources
-					a(href="#") Правила чата
-					a(href="#") Пользовательское соглашение
-				form(action="#").section-right__bottom
-					label.textarea
-						input(placeholder="Сообщение" maxlength="150")
-						span.maxl 0/150
-					.smiles
-						img(src="img/smile-1.png" alt="Smile")
-					button.send
-						img(src="img/send-message.svg" alt="Ico")
+			include chat.pug

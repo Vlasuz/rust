@@ -2209,18 +2209,26 @@ main{
 		text-align: center;
 		padding: 6px;
 		padding-top: 18px;
-		span{
-			font-weight: 700;
-			font-size: 12px;
-			line-height: 11px;
-			color: #FFFFFF;
-			display: block;
+		.timer-clock{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin-top: 16px;
 			span{
-				font-weight: 400;
-				color: #696E84;
-				display: inline;
-				margin-top: 0;
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 11px;
+				color: #FFFFFF;
+				display: block;
+			}
+			.sec{
+				small.dot,
+				span{
+					font-weight: 400;
+					color: #696E84;
+					display: inline;
+					margin-top: 0;
+				}
 			}
 		}
 		.timer{
@@ -3106,7 +3114,7 @@ section{
 
 	&__players{
 		overflow: auto;
-		height: calc(100vh - 513px);
+		height: calc(100vh - 370px);
 		margin-top: 14px;
 		background: #202232;
 		border-radius: 10px;
@@ -3447,12 +3455,17 @@ section{
 				line-height: 14px;
 				color: #A2ABC5;
 			}
-			.time{
-				font-weight: 400;
-				font-size: 24px;
-				line-height: 23px;
-				color: #FFFFFF;
-				.sec{
+			.timer{
+				display: flex;
+				small.dot,
+				span{
+					font-weight: 400;
+					font-size: 24px;
+					line-height: 23px;
+					color: #FFFFFF;
+				}
+				small.dot,
+				.sec span{
 					color: #3A3D4F;
 				}
 			}
@@ -6171,13 +6184,20 @@ section{
 			}
 			.timer{
 				margin-top: 14px;
+				display: flex;
+				small.dot{
+					color: #474854;
+					font-weight: 400;
+					font-size: 24px;
+					line-height: 23px;
+				}
 				span{
 					font-weight: 700;
 					font-size: 24px;
 					line-height: 23px;
 					color: #FFFFFF;
 				}
-				.sec{
+				.sec span{
 					color: #474854;
 					font-weight: 400;
 				}

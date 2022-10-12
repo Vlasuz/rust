@@ -8,8 +8,6 @@ block body
 
 			include includes/aside.pug
 
-			
-
 			section.section-fight
 
 				.section-fight__lft
@@ -84,8 +82,15 @@ block body
 						//- img(src="img/loading-fight.svg" alt="Loading")
 						span Начало
 						.timer
-							span.min 15
-							span.sec .45
+							.min
+								span **
+							.sec
+								small.dot .
+								span **
+					script.
+						document.addEventListener('DOMContentLoaded', () => {
+							timeDeadlineFunc('Oct 14 2022 18:00:00 GMT+0300');
+						})
 
 				.section-fight__rht
 

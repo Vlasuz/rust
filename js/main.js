@@ -1,5 +1,130 @@
 
 
+function timeDeadlineFunc(timeDeadline) {
+
+  if( document.querySelector('section .min') ){
+
+    function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
+     
+    function initializeClock(id, endtime) {
+      var clock = document.body;
+
+      var daysSpan = 0;
+      var hoursSpan = 0;
+      var minutesSpan = 0;
+      var secondsSpan = 0;
+
+      if(clock.querySelector('section .day span'))
+        daysSpan = clock.querySelector('section .day span');
+      if(clock.querySelector('section .hour span'))
+        hoursSpan = clock.querySelector('section .hour span');
+      if(clock.querySelector('section .min span'))
+        minutesSpan = clock.querySelector('section .min span');
+      if(clock.querySelector('section .sec span'))
+        secondsSpan = clock.querySelector('section .sec span');
+     
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+     
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+     
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+
+      }
+     
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    }
+     
+    var deadline = new Date(timeDeadline); // for endless timer
+    initializeClock('countdown', deadline);
+
+  }
+
+}
+
+function timeDeadlineFuncAside(timeDeadline){
+
+  if( document.querySelector('aside .min') ){
+
+    function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
+     
+    function initializeClock(id, endtime) {
+      var clock = document.body;
+
+      var daysSpan = 0;
+      var hoursSpan = 0;
+      var minutesSpan = 0;
+      var secondsSpan = 0;
+
+      if(clock.querySelector('aside .day span'))
+        daysSpan = clock.querySelector('aside .day span');
+      if(clock.querySelector('aside .hour span'))
+        hoursSpan = clock.querySelector('aside .hour span');
+      if(clock.querySelector('aside .min span'))
+        minutesSpan = clock.querySelector('aside .min span');
+      if(clock.querySelector('aside .sec span'))
+        secondsSpan = clock.querySelector('aside .sec span');
+     
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+     
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+     
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+
+      }
+     
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    }
+     
+    var deadline = new Date(timeDeadline); // for endless timer
+    initializeClock('countdown', deadline);
+
+  }
+
+}
+
+
+
+
 
 document.querySelectorAll('.popup-new-room .popup-new-room__switcher li').forEach((btn, btnNum) => {
 
@@ -39,19 +164,7 @@ document.querySelector('.inputs__item-sum input').addEventListener('keyup', func
 })
 
 
-// document.querySelectorAll('.popup-new-room__item').forEach(function (item) {
-//   item.onclick = function () {
-//     this.classList.toggle('popup-new-room__item_active')
 
-
-//     // document.querySelector('.popup-new-room__zone ul').append(item)
-
-//     if( document.querySelectorAll('.popup-new-room__zone ul li').length > 0 && document.querySelector('.popup-new-room__zone p') ){
-//       document.querySelector('.popup-new-room__zone p').remove()
-//     }
-
-//   }
-// })
 
 
 document.querySelectorAll('.storage .postamat__item').forEach(function (storItem) {
@@ -160,6 +273,7 @@ document.querySelectorAll('.input-pincode input').forEach(elem => {
 
 
 
+
 document.querySelectorAll('.popup__close, .popup__bgd').forEach(function (close) {
   
   close.onclick = function () {
@@ -242,56 +356,6 @@ function showNotice(notice) {
 }
 
 
-
-
-
-
-
-if( document.querySelector('.day') ){
-
-  function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
-    return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
-   
-  function initializeClock(id, endtime) {
-    var clock = document.body;
-    var daysSpan = clock.querySelector('.day span');
-    var hoursSpan = clock.querySelector('.hour span');
-    var minutesSpan = clock.querySelector('.min span');
-    var secondsSpan = clock.querySelector('.sec span');
-   
-    function updateClock() {
-      var t = getTimeRemaining(endtime);
-   
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-   
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-   
-    updateClock();
-    var timeinterval = setInterval(updateClock, 1000);
-  }
-   
-  var deadline = new Date("Oct 10 2022 18:00:00 GMT+0300"); // for endless timer
-  initializeClock('countdown', deadline);
-
-}
 
 
 

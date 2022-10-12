@@ -167,7 +167,18 @@
     <aside class="aside">
       <!-- aside__plane aside__plane_timeline -->
       <a class="aside__plane" href="map.html">
-        <img src="img/plane.svg" alt="Plane"><span>15<span>.45</span></span>
+        <img src="img/plane.svg" alt="Plane">
+        <div class="timer-clock">
+          <div class="min"><span>**</span>
+          </div>
+          <div class="sec"><small class="dot">.</small><span>**</span>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            	timeDeadlineFuncAside('Oct 14 2022 18:00:00 GMT+0300');
+            })
+        </script>
         <div class="timer">
           <img src="img/timer-line.svg" alt="Line">
           <div class="timer__line">
@@ -298,9 +309,18 @@
       </div>
       <div class="section-fight__center">
         <div class="center__running"><span>Начало</span>
-          <div class="timer"><span class="min">15</span><span class="sec">.45</span>
+          <div class="timer">
+            <div class="min"><span>**</span>
+            </div>
+            <div class="sec"><small class="dot">.</small><span>**</span>
+            </div>
           </div>
         </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            	timeDeadlineFunc('Oct 14 2022 18:00:00 GMT+0300');
+            })
+        </script>
       </div>
       <div class="section-fight__rht">
         <div class="section-fight__top">

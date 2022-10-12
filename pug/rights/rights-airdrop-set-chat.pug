@@ -18,9 +18,16 @@ section.section-right
 					.airdrop__fly
 						.fly__top
 							p До вылета:
-							.time
-								span.min 20
-								span.sec .00
+							.timer
+								.min
+									span **
+								.sec
+									small.dot .
+									span **
+							script.
+								document.addEventListener('DOMContentLoaded', () => {
+									timeDeadlineFunc('Oct 14 2022 18:00:00 GMT+0300');
+								})
 						.fly__bottom
 							.fly__timer
 								img(src="img/line-for-right.svg" alt="Ico")

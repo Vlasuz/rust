@@ -167,7 +167,18 @@
     <aside class="aside">
       <!-- aside__plane aside__plane_timeline -->
       <a class="aside__plane" href="map.html">
-        <img src="img/plane.svg" alt="Plane"><span>15<span>.45</span></span>
+        <img src="img/plane.svg" alt="Plane">
+        <div class="timer-clock">
+          <div class="min"><span>**</span>
+          </div>
+          <div class="sec"><small class="dot">.</small><span>**</span>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            	timeDeadlineFuncAside('Oct 14 2022 18:00:00 GMT+0300');
+            })
+        </script>
         <div class="timer">
           <img src="img/timer-line.svg" alt="Line">
           <div class="timer__line">
@@ -289,31 +300,40 @@
         </button>
       </div>
       <div class="section-right__switcher">
-        <div class="section-right__item section-right_active">
-          <div class="section-right__notice">
-            <div class="notice__item notice__block-chat"><span>Доступ к чату заблокирован, ограничения снимутся через 00:15:32 </span>
-              <img src="img/status-error.svg" alt="Ico">
-            </div>
-            <div class="notice__item notice__pererab"><span>Переработано</span>
-              <img src="img/green-check.svg" alt="Ico">
-            </div>
-            <div class="notice__item notice__sleepers-bought"><span>Спальники куплены</span>
-              <img src="img/green-check.svg" alt="Ico">
-            </div>
-            <div class="notice__item notice__no-cash"><span>Недостаточно средств</span>
-              <img src="img/status-error.svg" alt="Ico">
-            </div>
-            <div class="notice__item notice__add-cart"><span>Добавлен в корзину</span>
-              <img src="img/green-check.svg" alt="Check">
-            </div>
+        <div class="section-right__notice">
+          <div class="notice__item notice__block-chat"><span>Доступ к чату заблокирован, ограничения снимутся через 00:15:32 </span>
+            <img src="img/status-error.svg" alt="Ico">
           </div>
+          <div class="notice__item notice__pererab"><span>Переработано</span>
+            <img src="img/green-check.svg" alt="Ico">
+          </div>
+          <div class="notice__item notice__sleepers-bought"><span>Спальники куплены</span>
+            <img src="img/green-check.svg" alt="Ico">
+          </div>
+          <div class="notice__item notice__no-cash"><span>Недостаточно средств</span>
+            <img src="img/status-error.svg" alt="Ico">
+          </div>
+          <div class="notice__item notice__add-cart"><span>Добавлен в корзину</span>
+            <img src="img/green-check.svg" alt="Check">
+          </div>
+        </div>
+        <div class="section-right__item section-right_active">
           <div class="section-right__airdrop">
             <div class="airdrop__block">
               <div class="airdrop__fly">
                 <div class="fly__top">
                   <p>До вылета:</p>
-                  <div class="time"><span class="min">20</span><span class="sec">.00</span>
+                  <div class="timer">
+                    <div class="min"><span>**</span>
+                    </div>
+                    <div class="sec"><small class="dot">.</small><span>**</span>
+                    </div>
                   </div>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                      	timeDeadlineFunc('Oct 14 2022 18:00:00 GMT+0300');
+                      })
+                  </script>
                 </div>
                 <div class="fly__bottom">
                   <div class="fly__timer">
@@ -485,7 +505,7 @@
                   <ul class="item__dropdown">
                     <li><a href="#">Скрыть сообщение</a>
                     </li>
-                    <li><a href="#">Заглушить</a>
+                    <li onclick="showNotice('block-chat')"><a href="#">Заглушить</a>
                     </li>
                     <li><a href="#">Блокировать 1ч</a>
                     </li>
@@ -522,7 +542,44 @@
                   <ul class="item__dropdown">
                     <li><a href="#">Скрыть сообщение</a>
                     </li>
-                    <li><a href="#">Заглушить</a>
+                    <li onclick="showNotice('block-chat')"><a href="#">Заглушить</a>
+                    </li>
+                    <li><a href="#">Блокировать 1ч</a>
+                    </li>
+                    <li><a href="#">Бан чата</a>
+                    </li>
+                    <li class="li__delete"><a href="#">Удалить</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chatting__item chatting__item_system">
+                <div class="item__photo">
+                  <div class="photo">
+                    <img src="img/user.jpeg" alt="User">
+                  </div>
+                  <div class="mark">
+                    <img src="img/twitch.svg" alt="Ico">
+                  </div>
+                </div>
+                <div class="item__inner">
+                  <div class="item__top">
+                    <h4 class="item__name">Система</h4>
+                    <div class="item__muted">
+                      <img src="img/muted.svg" alt="Menu">
+                    </div>
+                    <button class="item__menu">
+                      <img src="img/chat-menu.svg" alt="Menu">
+                    </button>
+                    <time class="item__time">12:46</time>
+                  </div>
+                  <div class="item__text">
+                    <p>Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!</p>
+                  </div>
+                  <ul class="item__dropdown">
+                    <li><a href="#">Скрыть сообщение</a>
+                    </li>
+                    <li onclick="showNotice('block-chat')"><a href="#">Заглушить</a>
                     </li>
                     <li><a href="#">Блокировать 1ч</a>
                     </li>
@@ -559,7 +616,7 @@
                   <ul class="item__dropdown">
                     <li><a href="#">Скрыть сообщение</a>
                     </li>
-                    <li><a href="#">Заглушить</a>
+                    <li onclick="showNotice('block-chat')"><a href="#">Заглушить</a>
                     </li>
                     <li><a href="#">Блокировать 1ч</a>
                     </li>
@@ -596,44 +653,7 @@
                   <ul class="item__dropdown">
                     <li><a href="#">Скрыть сообщение</a>
                     </li>
-                    <li><a href="#">Заглушить</a>
-                    </li>
-                    <li><a href="#">Блокировать 1ч</a>
-                    </li>
-                    <li><a href="#">Бан чата</a>
-                    </li>
-                    <li class="li__delete"><a href="#">Удалить</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="chatting__item">
-                <div class="item__photo">
-                  <div class="photo">
-                    <img src="img/user.jpeg" alt="User">
-                  </div>
-                  <div class="mark">
-                    <img src="img/twitch.svg" alt="Ico">
-                  </div>
-                </div>
-                <div class="item__inner">
-                  <div class="item__top">
-                    <h4 class="item__name">Система</h4>
-                    <div class="item__muted">
-                      <img src="img/muted.svg" alt="Menu">
-                    </div>
-                    <button class="item__menu">
-                      <img src="img/chat-menu.svg" alt="Menu">
-                    </button>
-                    <time class="item__time">12:46</time>
-                  </div>
-                  <div class="item__text">
-                    <p>Из-за технический работ сайт может функционировать не корректно в ближайший час. Спасибо за понимание!</p>
-                  </div>
-                  <ul class="item__dropdown">
-                    <li><a href="#">Скрыть сообщение</a>
-                    </li>
-                    <li><a href="#">Заглушить</a>
+                    <li onclick="showNotice('block-chat')"><a href="#">Заглушить</a>
                     </li>
                     <li><a href="#">Блокировать 1ч</a>
                     </li>
@@ -645,15 +665,125 @@
                 </div>
               </div>
             </div>
-            <div class="section-right__resources"><a href="#">Правила чата</a><a href="#">Пользовательское соглашение</a>
+            <div class="section-right__smiles">
+              <div class="smiles__inner">
+                <div class="smiles__block">
+                  <ul>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-0.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-1.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-2.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-3.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-4.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-5.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-0.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-1.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-2.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-3.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-4.png" alt="Smile">
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <img src="img/Bitmap-5.png" alt="Smile">
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="smiles__switches">
+                <ul>
+                  <li>
+                    <button>Смайлики</button>
+                  </li>
+                  <li class="li_active">
+                    <button>Стикеры «Фермер»</button>
+                  </li>
+                  <li>
+                    <button>«Стикеры Грибник»</button>
+                  </li>
+                  <li>
+                    <button>Смайлики</button>
+                  </li>
+                  <li>
+                    <button>Стикеры «Фермер»</button>
+                  </li>
+                  <li>
+                    <button>«Стикеры Грибник»</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="section-right__rules">
+              <div class="rules__block">
+                <h2>Правила чата</h2>
+                <h3>Запрещается:</h3>
+                <p>· Использовать в никнейме название или ссылки ведущие на сторонний сайт</p>
+                <br>
+                <p>· Рекламировать каналы Youtube / Twitch</p>
+                <br>
+                <p>· Оскорблять других участников чата / сайта.</p>
+                <br>
+                <p>· Упоминание платежных реквизитов в целях попрошайничества.</p>
+                <br>
+                <p>· Распространять URL ссылки и промо-коды (кроме Администрации и Модераторов).</p>
+                <br>
+                <p>· Спамить сообщения в чат по одному символу.</p>
+                <br>
+                <p>Любой участник сайта/чата, должен с уважением относится ко всем без исключения участникам.</p>
+              </div>
+            </div>
+            <div class="section-right__resources">
+              <button class="resources__button">Правила чата</button><a class="resources__button" href="terms.html">Пользовательское соглашение</a>
             </div>
             <form class="section-right__bottom" action="#">
               <label class="textarea">
                 <input placeholder="Сообщение" maxlength="150"><span class="maxl">0/150</span>
               </label>
-              <div class="smiles">
+              <button class="smiles" onclick="document.querySelector('.section-right__smiles').classList.toggle('section-right__smiles_active')">
                 <img src="img/smile-1.png" alt="Smile">
-              </div>
+              </button>
               <button class="send">
                 <img src="img/send-message.svg" alt="Ico">
               </button>

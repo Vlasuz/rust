@@ -2940,15 +2940,27 @@ main {
   padding: 6px;
   padding-top: 18px
 }
-.aside__plane span {
+.aside__plane .timer-clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 16px
+}
+.aside__plane .timer-clock span {
   font-weight: 700;
   font-size: 12px;
   line-height: 11px;
   color: #fff;
-  display: block;
-  margin-top: 16px
+  display: block
 }
-.aside__plane span span {
+.aside__plane .timer-clock .sec small.dot,
+.aside__plane .timer-clock .sec span {
   font-weight: 400;
   color: #696e84;
   display: inline;
@@ -4077,7 +4089,7 @@ section {
 }
 .section-right__players {
   overflow: auto;
-  height: calc(100vh - 513px);
+  height: calc(100vh - 370px);
   margin-top: 14px;
   background: #202232;
   border-radius: 10px;
@@ -4514,13 +4526,20 @@ section {
   line-height: 14px;
   color: #a2abc5
 }
-.section-right__airdrop .airdrop__fly .time {
+.section-right__airdrop .airdrop__fly .timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+.section-right__airdrop .airdrop__fly .timer small.dot,
+.section-right__airdrop .airdrop__fly .timer span {
   font-weight: 400;
   font-size: 24px;
   line-height: 23px;
   color: #fff
 }
-.section-right__airdrop .airdrop__fly .time .sec {
+.section-right__airdrop .airdrop__fly .timer .sec span,
+.section-right__airdrop .airdrop__fly .timer small.dot {
   color: #3a3d4f
 }
 .section-right__airdrop .airdrop__block {
@@ -7832,7 +7851,16 @@ section {
   color: #a2abc5
 }
 .section-fight__center .center__running .timer {
-  margin-top: 14px
+  margin-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+.section-fight__center .center__running .timer small.dot {
+  color: #474854;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 23px
 }
 .section-fight__center .center__running .timer span {
   font-weight: 700;
@@ -7840,7 +7868,7 @@ section {
   line-height: 23px;
   color: #fff
 }
-.section-fight__center .center__running .timer .sec {
+.section-fight__center .center__running .timer .sec span {
   color: #474854;
   font-weight: 400
 }
