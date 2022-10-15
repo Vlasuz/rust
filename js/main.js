@@ -1,5 +1,32 @@
 
 
+function timerMilisec(parentClass, timerSecond) {
+  var timeElem = document.querySelector(parentClass + ' .timer'), 
+      countdown = new Date(),
+      responseTime = new Date(Date.now() + (1000*timerSecond)); // таймер 10 секунд
+
+  function startTime() {
+    countdown.setTime(responseTime - Date.now());
+    timeElem.innerHTML = 
+      // countdown.getUTCHours() + ':' + 
+      // countdown.getUTCMinutes() + ':' + 
+      '<div class="min"><span>' + ((countdown.getUTCSeconds() < 10) ? ('0' + countdown.getUTCSeconds()) : countdown.getUTCSeconds()) + '</span></div>' + 
+
+      '<div class="sec"><span>.' + String(countdown.getUTCMilliseconds())[0] + 
+      '' + (String(countdown.getUTCMilliseconds())[1] ? String(countdown.getUTCMilliseconds())[1] : '0') +
+
+       '</span></div>';
+    if(countdown.getUTCHours() > 0 || countdown.getUTCMinutes() > 0 || countdown.getUTCSeconds() > 0) {
+      requestAnimationFrame(startTime);
+    }
+    else {
+      timeElem.innerHTML = '<div class="min"><span>00</span></div><div class="sec"><span>.00</span></div>'
+    }
+  }
+  requestAnimationFrame(startTime);
+}
+
+
 function timeDeadlineFunc(timeDeadline) {
 
   if( document.querySelector('section .min') ){
@@ -425,7 +452,7 @@ function deleteItems(itemsForDelete, closestItemClass) {
 
       let th = this.closest('.' + closestItemClass)
 
-      console.log(closestItemClass)
+      // console.log(closestItemClass)
       this.closest('.' + closestItemClass).classList.add(closestItemClass + '_deleted')
       setTimeout(function () {
         th.remove()
@@ -599,9 +626,9 @@ function moveSleepers(sleeper) {
     function onMouseMove(event) {
       moveAt(event.pageX, event.pageY);
 
-      sleeper.hidden = true;
+      sleeper.style.display = 'none';
       let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-      sleeper.hidden = false;
+      sleeper.style.display = 'flex';
 
       if(!elemBelow) return;
 
@@ -651,33 +678,45 @@ function moveSleepers(sleeper) {
   })
 }
 
+let pointXOfScale = 0
+let pointYOfScale = 0
 if(document.querySelector('.section-map__map')){
 
   let boundingTop = document.querySelector('.section-map__map').getBoundingClientRect().top
   let boundingLeft = document.querySelector('.section-map__map').getBoundingClientRect().left
   let sum = 1;
 
+  let mousemovePointScale = function (event) {
+    pointXOfScale = event.offsetX
+    pointYOfScale = event.offsetY
+
+    // console.log(event.offsetX)
+  }
+
+  document.querySelector('.map__points').addEventListener('mousemove', mousemovePointScale)
+
   document.querySelector('.section-map__map').addEventListener('wheel', function (event) {
+
+
+    this.style.transformOrigin = `${pointXOfScale}px ${pointYOfScale}px`;
     
     let count = event.deltaY / 100;
 
     boundingTop = document.querySelector('.section-map__map').getBoundingClientRect().top;
     boundingLeft = document.querySelector('.section-map__map').getBoundingClientRect().left;
 
-    if( sum >= 1 ){
-      sum -= count;
+    sum -= count;
+
+    if( sum > 0.99 ){
       this.style.transform = `scale(${sum})`;
-
-
-      return;
+    } else if (sum < 0.8){
+      sum = 1
+      this.style.transform = `scale(${sum})`;
     }
-    sum = 1
+    return;
   })
 
   document.querySelector('.section-map__map').onmousedown = function (event) {
-
-    // boundingTop = document.querySelector('.section-map__map').getBoundingClientRect().top;
-    // boundingLeft = document.querySelector('.section-map__map').getBoundingClientRect().left;
 
     if( !event.target.closest('.sleepers__item') ){
 
@@ -1019,7 +1058,10 @@ toggleFunctions(document.querySelectorAll('.item__type_clothes'), 'list-games__i
 toggleFunctions(document.querySelectorAll('.section-faq__item .item__head'), 'section-faq__item')
 
 
+
 function fightSelect(selector) {
+
+  let lenActive = 0
 
   document.querySelectorAll(selector + ' button').forEach(function (btn, btnNum) {
 
@@ -1077,6 +1119,56 @@ function fightSelect(selector) {
     }
 
   })
+
+  document.querySelectorAll('.section-fight__persone img').forEach((imgItem) => {
+
+    if( !document.querySelector('.section-fight__confetti') ){
+
+      let btn = document.querySelector(`button[data-persone="${imgItem.classList.value.split(' ')[0]}"]`)
+
+      imgItem.addEventListener('mousemove', function () {
+          
+        if(imgItem.classList.value){
+          imgItem.classList.add('img_hover')
+          document.querySelector(`button[data-persone="${imgItem.classList.value.split(' ')[0]}"]`).classList.add('button_hover')
+        }
+
+      })
+      imgItem.addEventListener('mouseout', function () {
+        
+        if(imgItem.classList.value){
+          imgItem.classList.remove('img_hover')
+          document.querySelector(`button[data-persone="${imgItem.classList.value.split(' ')[0]}"]`).classList.remove('button_hover')
+        }
+
+      })
+      imgItem.onclick = function (event) {
+
+        if(imgItem.classList.value){
+
+          lenActive = 0
+
+          btn.click()
+
+          for( let imgCheck of event.target.closest('.section-fight__persone').querySelectorAll('img') ){
+            if( imgCheck.classList.contains('img_clicked') ){
+              lenActive++;
+            }
+          }
+
+          if ( lenActive > 2 ){
+            btn.click()
+            return
+          }
+
+        }
+
+      }
+
+    }
+
+  })
+
 }
 
 fightSelect('.section-fight__select')
@@ -1100,7 +1192,7 @@ function minusingCoins() {
 if(document.querySelector('.section-fight__confetti')){
 
   setTimeout(function () {
-    document.querySelector('.section-fight__confetti_active img').setAttribute('src', 'img/confetti.gif')
+    document.querySelector('.section-fight__confetti_active img').setAttribute('src', 'img/confetti.webp')
     document.querySelector('.section-fight__confetti_active').style.opacity = '1';
 
     minusingCoins();

@@ -2,7 +2,7 @@ aside.aside
 	<!-- aside__plane aside__plane_timeline -->
 	a(href="map.html").aside__plane
 		img(src="img/plane.svg" alt="Plane")
-		.timer-clock
+		.timer
 			.min
 				span **
 			.sec
@@ -10,13 +10,13 @@ aside.aside
 				span **
 		script.
 			document.addEventListener('DOMContentLoaded', () => {
-				timeDeadlineFuncAside('Oct 14 2022 18:00:00 GMT+0300');
+				timerMilisec('.aside', 50) // timerMilisec(Родитель, Секунды)
 			})
 
-		.timer
+		.timer-line
 			img(src="img/timer-line.svg" alt="Line")
-			.timer__line
-				.timer__line_done
+			.timer-line__line
+				.timer-line__line_done
 
 	<!-- aside__fight aside__fight_active -->
 	a(href="list-games.html").aside__fight

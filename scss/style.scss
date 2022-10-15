@@ -8,6 +8,12 @@
 	padding-right: 15px;
 }
 
+
+body { margin: 0; }
+canvas { width: 100vh; height: 100vh }
+
+
+
 :root{
 	--cFF: #FFFFFF;
 }
@@ -2069,6 +2075,10 @@ main{
 			color: #A2ABC5;
 			padding: 7px 0;
 			display: block;
+			transition: all .3s ease;
+			&:hover{
+				color: #fff;
+			}
 		}
 		.lang_active a{
 			color: #63697F;
@@ -2209,7 +2219,7 @@ main{
 		text-align: center;
 		padding: 6px;
 		padding-top: 18px;
-		.timer-clock{
+		.timer{
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -2231,33 +2241,33 @@ main{
 				}
 			}
 		}
-		.timer{
+		.timer-line{
 			transition: all .3s ease;
 			opacity: 0;
-		}
-		.timer__line{
-			background: rgba(162, 171, 197, 0.2);
-			border-radius: 2px;
-			width: 100%;
-			height: 2px;
-			position: relative;
-			transition: all .3s ease;
-			opacity: 0;
-			&_done{
-				background: #F5AD57;
+			&__line{
+				background: rgba(162, 171, 197, 0.2);
 				border-radius: 2px;
-				width: 40%;
+				width: 100%;
 				height: 2px;
-				position: absolute;
-				left: 0;
-				top: 0;
+				position: relative;
+				transition: all .3s ease;
+				opacity: 0;
+				&_done{
+					background: #F5AD57;
+					border-radius: 2px;
+					width: 40%;
+					height: 2px;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
 			}
 		}
 		&:hover,
 		&_timeline{
 			background: linear-gradient(38.31deg, rgba(162, 171, 197, 0.15) 0%, rgba(162, 171, 197, 0.05) 100%);
-			.timer,
-			.timer__line{
+			.timer-line,
+			.timer-line__line{
 				opacity: 1;
 			}
 		}
@@ -3468,6 +3478,9 @@ section{
 				.sec span{
 					color: #3A3D4F;
 				}
+				.sec{
+					min-width: 40px
+				}
 			}
 		}
 		.airdrop__block{
@@ -3817,7 +3830,7 @@ section{
 			&:before{
 				content: '';
 				height: 5px;
-				width: 150%;
+				width: 120%;
 				position: absolute;
 				background: #191A29;
 				top: -5px;
@@ -3908,6 +3921,7 @@ section{
 	padding: 20px 0;
 	cursor: pointer;
 	position: relative;
+	display: flex;
 	&:hover{
 		button{
 			background: #A2ABC5;
@@ -4325,7 +4339,7 @@ section{
 		top: 50%;
 		transform: translateY(-50%);
 		left: 0;
-		z-index: 2;
+		z-index: 999;
 		animation: linesTr .5s linear infinite, planeFly 15s linear forwards;
 		display: flex;
 		align-items: center;
@@ -5125,7 +5139,7 @@ section{
 	padding-top: 24px;
 	background: #202232;
 	padding: 15px;
-	border-radius: 0 10px 10px 10px;
+	border-radius: 0 0px 10px 10px;
 
 	user-select: none;
 
@@ -5887,6 +5901,7 @@ section{
 			img{
 				display: none;
 			}
+			&.button_hover,
 			&:hover{
 				background: #363A51;
 				backdrop-filter: blur(5px);
@@ -6197,6 +6212,9 @@ section{
 					line-height: 23px;
 					color: #FFFFFF;
 				}
+				.sec{
+					min-width: 40px;
+				}
 				.sec span{
 					color: #474854;
 					font-weight: 400;
@@ -6241,6 +6259,7 @@ section{
 		position: relative;
 		img{
 			display: block;
+			cursor: pointer;
 		}
 
 		.attacked__bullet{
@@ -6250,13 +6269,13 @@ section{
 			display: none;
 			opacity: 0;
 			&:nth-child(1){
-				animation: attackRight 1s .5s ease-out forwards;
+				animation: attackRight 1.5s .5s ease-out forwards;
 			}
 			&:nth-child(2){
-				animation: attackRight 1s 1s ease-out forwards;
+				animation: attackRight 1.5s 1s ease-out forwards;
 			}
 			&:nth-child(3){
-				animation: attackRight 1s 1.5s ease-out forwards;
+				animation: attackRight 1.5s 1.5s ease-out forwards;
 			}
 			&_good{
 				display: flex;
@@ -6378,13 +6397,13 @@ section{
 				opacity: 0;
 				transform: rotate(180deg);
 				&:nth-child(1){
-					animation: attackLeft 1s .5s ease-out forwards;
+					animation: attackLeft 1.5s .5s ease-out forwards;
 				}
 				&:nth-child(2){
-					animation: attackLeft 1s 1s ease-out forwards;
+					animation: attackLeft 1.5s 1s ease-out forwards;
 				}
 				&:nth-child(3){
-					animation: attackLeft 1s 1.5s ease-out forwards;
+					animation: attackLeft 1.5s 1.5s ease-out forwards;
 				}
 			}
 
@@ -6415,21 +6434,27 @@ section{
 
 
 @keyframes attackLeft {
-	from{
+	0%{
 		left: 0;
 		opacity: 0;
 	}
-	to{
+	50%{
+		left: 100px;
+	}
+	100%{
 		left: 120px;
 		opacity: 1;
 	}
 }
 @keyframes attackRight {
-	from{
+	0%{
 		right: 0;
 		opacity: 0;
 	}
-	to{
+	50%{
+		right: 100px;
+	}
+	100%{
 		right: 120px;
 		opacity: 1;
 	}

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Website">
   <meta name="keywords" content="Website">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <link rel="stylesheet" href="fonts/GothamPro/stylesheet.css">
   <!-- ** MAIN STYLE ** -->
   <link rel="stylesheet" href="css/style.css">
@@ -168,7 +169,7 @@
       <!-- aside__plane aside__plane_timeline -->
       <a class="aside__plane" href="map.html">
         <img src="img/plane.svg" alt="Plane">
-        <div class="timer-clock">
+        <div class="timer">
           <div class="min"><span>**</span>
           </div>
           <div class="sec"><small class="dot">.</small><span>**</span>
@@ -176,13 +177,13 @@
         </div>
         <script>
           document.addEventListener('DOMContentLoaded', () => {
-            	timeDeadlineFuncAside('Oct 14 2022 18:00:00 GMT+0300');
+            	timerMilisec('.aside', 50) // timerMilisec(Родитель, Секунды)
             })
         </script>
-        <div class="timer">
+        <div class="timer-line">
           <img src="img/timer-line.svg" alt="Line">
-          <div class="timer__line">
-            <div class="timer__line_done"></div>
+          <div class="timer-line__line">
+            <div class="timer-line__line_done"></div>
           </div>
         </div>
       </a>

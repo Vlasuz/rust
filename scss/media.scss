@@ -79,7 +79,7 @@
 		width: 20px;
 		height: 20px;
 	}
-	.aside__plane span{
+	.aside__plane .timer{
 		margin-top: 6px;
 	}
 	.aside__fight{
@@ -92,9 +92,13 @@
 		display: flex;
 		align-items: center;
 	}
+	.aside__list a svg{
+		margin: 0 auto;
+	}
 	.aside__list a{
 		margin-bottom: 0;
-		margin-right: 14px;
+		margin-right: 30px;
+		justify-content: center;
 	}
 
 	.section-blocks{
@@ -237,6 +241,31 @@
 }
 
 @media screen and (max-width: 768px) {
+
+	.aside__plane .timer img{
+		display: none;
+	}
+	.aside__plane .timer{
+		margin-top: 0;
+	}
+	.aside__fight{
+		padding: 0 10px;
+		margin: 0;
+	}
+	.aside__author{
+		line-height: normal;
+		font-size: 7px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.aside__center{
+		border-radius: 10px;
+	}
+	.aside__author img{
+		width: 14px;
+		height: 14px;
+	}
 
 	.popup-entry-clothes__list, .popup-new-room__list{
 		grid-template-columns: repeat(2, 1fr);
@@ -469,6 +498,7 @@
 		font-size: 12px;
 	}
 
+	.section-right__airdrop .airdrop__fly .timer small.dot, .section-right__airdrop .airdrop__fly .timer span,
 	.section-right__airdrop .airdrop__fly .time{
 		font-size: 18px;
 	}
@@ -662,7 +692,6 @@
 
 	.aside__center{
 		padding: 0;
-		padding-left: 10px;
 	}
 	.aside__fight img{
 		width: 20px;
@@ -685,7 +714,7 @@
 
 @media screen and (max-width: 360px) {
 	.aside__list a{
-		margin-right: 7px;
+		margin-right: 14px;
 	}
 	.section-right__airdrop .fly__top{
 		flex-direction: column;

@@ -201,6 +201,13 @@ a {
   padding-left: 15px;
   padding-right: 15px
 }
+body {
+  margin: 0
+}
+canvas {
+  width: 100vh;
+  height: 100vh
+}
 :root {
   --cFF: #FFFFFF
 }
@@ -2770,7 +2777,13 @@ main {
   line-height: 14px;
   color: #a2abc5;
   padding: 7px 0;
-  display: block
+  display: block;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease
+}
+.header__lang a:hover {
+  color: #fff
 }
 .header__lang .lang_active a {
   color: #63697f
@@ -2940,7 +2953,7 @@ main {
   padding: 6px;
   padding-top: 18px
 }
-.aside__plane .timer-clock {
+.aside__plane .timer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2952,27 +2965,27 @@ main {
   justify-content: center;
   margin-top: 16px
 }
-.aside__plane .timer-clock span {
+.aside__plane .timer span {
   font-weight: 700;
   font-size: 12px;
   line-height: 11px;
   color: #fff;
   display: block
 }
-.aside__plane .timer-clock .sec small.dot,
-.aside__plane .timer-clock .sec span {
+.aside__plane .timer .sec small.dot,
+.aside__plane .timer .sec span {
   font-weight: 400;
   color: #696e84;
   display: inline;
   margin-top: 0
 }
-.aside__plane .timer {
+.aside__plane .timer-line {
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
   opacity: 0
 }
-.aside__plane .timer__line {
+.aside__plane .timer-line__line {
   background: rgba(162,171,197,.2);
   border-radius: 2px;
   width: 100%;
@@ -2983,7 +2996,7 @@ main {
   transition: all .3s ease;
   opacity: 0
 }
-.aside__plane .timer__line_done {
+.aside__plane .timer-line__line_done {
   background: #f5ad57;
   border-radius: 2px;
   width: 40%;
@@ -2997,10 +3010,10 @@ main {
   background: -o-linear-gradient(51.69deg,rgba(162,171,197,.15) 0,rgba(162,171,197,.05) 100%);
   background: linear-gradient(38.31deg,rgba(162,171,197,.15) 0,rgba(162,171,197,.05) 100%)
 }
-.aside__plane:hover .timer,
-.aside__plane:hover .timer__line,
-.aside__plane_timeline .timer,
-.aside__plane_timeline .timer__line {
+.aside__plane:hover .timer-line,
+.aside__plane:hover .timer-line__line,
+.aside__plane_timeline .timer-line,
+.aside__plane_timeline .timer-line__line {
   opacity: 1
 }
 section {
@@ -4542,6 +4555,9 @@ section {
 .section-right__airdrop .airdrop__fly .timer small.dot {
   color: #3a3d4f
 }
+.section-right__airdrop .airdrop__fly .timer .sec {
+  min-width: 40px
+}
 .section-right__airdrop .airdrop__block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4962,7 +4978,7 @@ section {
 .section-right__top .top__item:before {
   content: "";
   height: 5px;
-  width: 150%;
+  width: 120%;
   position: absolute;
   background: #191a29;
   top: -5px
@@ -5051,7 +5067,10 @@ section {
 .sleepers__item {
   padding: 20px 0;
   cursor: pointer;
-  position: relative
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
 }
 .sleepers__item:hover button {
   background: #a2abc5;
@@ -5510,7 +5529,7 @@ section {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  z-index: 2;
+  z-index: 999;
   -webkit-animation: linesTr .5s linear infinite,planeFly 15s linear forwards;
   animation: linesTr .5s linear infinite,planeFly 15s linear forwards;
   display: -webkit-box;
@@ -6499,7 +6518,7 @@ section {
   padding-top: 24px;
   background: #202232;
   padding: 15px;
-  border-radius: 0 10px 10px 10px;
+  border-radius: 0 0 10px 10px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -7459,6 +7478,7 @@ section {
 .section-fight__select button img {
   display: none
 }
+.section-fight__select button.button_hover,
 .section-fight__select button:hover {
   background: #363a51;
   -webkit-backdrop-filter: blur(5px);
@@ -7868,6 +7888,9 @@ section {
   line-height: 23px;
   color: #fff
 }
+.section-fight__center .center__running .timer .sec {
+  min-width: 40px
+}
 .section-fight__center .center__running .timer .sec span {
   color: #474854;
   font-weight: 400
@@ -7916,7 +7939,8 @@ section {
   position: relative
 }
 .section-fight__persone img {
-  display: block
+  display: block;
+  cursor: pointer
 }
 .section-fight__persone .attacked__bullet {
   position: absolute;
@@ -7926,16 +7950,16 @@ section {
   opacity: 0
 }
 .section-fight__persone .attacked__bullet:nth-child(1) {
-  -webkit-animation: attackRight 1s .5s ease-out forwards;
-  animation: attackRight 1s .5s ease-out forwards
+  -webkit-animation: attackRight 1.5s .5s ease-out forwards;
+  animation: attackRight 1.5s .5s ease-out forwards
 }
 .section-fight__persone .attacked__bullet:nth-child(2) {
-  -webkit-animation: attackRight 1s 1s ease-out forwards;
-  animation: attackRight 1s 1s ease-out forwards
+  -webkit-animation: attackRight 1.5s 1s ease-out forwards;
+  animation: attackRight 1.5s 1s ease-out forwards
 }
 .section-fight__persone .attacked__bullet:nth-child(3) {
-  -webkit-animation: attackRight 1s 1.5s ease-out forwards;
-  animation: attackRight 1s 1.5s ease-out forwards
+  -webkit-animation: attackRight 1.5s 1.5s ease-out forwards;
+  animation: attackRight 1.5s 1.5s ease-out forwards
 }
 .section-fight__persone .attacked__bullet_good {
   display: -webkit-box;
@@ -8088,16 +8112,16 @@ section {
   transform: rotate(180deg)
 }
 .section-fight__persone-hit .attacked__bullet:nth-child(1) {
-  -webkit-animation: attackLeft 1s .5s ease-out forwards;
-  animation: attackLeft 1s .5s ease-out forwards
+  -webkit-animation: attackLeft 1.5s .5s ease-out forwards;
+  animation: attackLeft 1.5s .5s ease-out forwards
 }
 .section-fight__persone-hit .attacked__bullet:nth-child(2) {
-  -webkit-animation: attackLeft 1s 1s ease-out forwards;
-  animation: attackLeft 1s 1s ease-out forwards
+  -webkit-animation: attackLeft 1.5s 1s ease-out forwards;
+  animation: attackLeft 1.5s 1s ease-out forwards
 }
 .section-fight__persone-hit .attacked__bullet:nth-child(3) {
-  -webkit-animation: attackLeft 1s 1.5s ease-out forwards;
-  animation: attackLeft 1s 1.5s ease-out forwards
+  -webkit-animation: attackLeft 1.5s 1.5s ease-out forwards;
+  animation: attackLeft 1.5s 1.5s ease-out forwards
 }
 .section-fight__persone-hit .persone__red img.img_clicked {
   opacity: 1!important
@@ -8116,41 +8140,53 @@ section {
   height: 100%
 }
 @-webkit-keyframes attackLeft {
-  from {
+  0% {
     left: 0;
     opacity: 0
   }
-  to {
+  50% {
+    left: 100px
+  }
+  100% {
     left: 120px;
     opacity: 1
   }
 }
 @keyframes attackLeft {
-  from {
+  0% {
     left: 0;
     opacity: 0
   }
-  to {
+  50% {
+    left: 100px
+  }
+  100% {
     left: 120px;
     opacity: 1
   }
 }
 @-webkit-keyframes attackRight {
-  from {
+  0% {
     right: 0;
     opacity: 0
   }
-  to {
+  50% {
+    right: 100px
+  }
+  100% {
     right: 120px;
     opacity: 1
   }
 }
 @keyframes attackRight {
-  from {
+  0% {
     right: 0;
     opacity: 0
   }
-  to {
+  50% {
+    right: 100px
+  }
+  100% {
     right: 120px;
     opacity: 1
   }
@@ -8565,7 +8601,7 @@ section {
     width: 20px;
     height: 20px
   }
-  .aside__plane span {
+  .aside__plane .timer {
     margin-top: 6px
   }
   .aside__fight {
@@ -8582,9 +8618,15 @@ section {
     -ms-flex-align: center;
     align-items: center
   }
+  .aside__list a svg {
+    margin: 0 auto
+  }
   .aside__list a {
     margin-bottom: 0;
-    margin-right: 14px
+    margin-right: 30px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
   }
   .section-blocks {
     margin: 0
@@ -8727,6 +8769,37 @@ section {
   }
 }
 @media screen and (max-width:768px) {
+  .aside__plane .timer img {
+    display: none
+  }
+  .aside__plane .timer {
+    margin-top: 0
+  }
+  .aside__fight {
+    padding: 0 10px;
+    margin: 0
+  }
+  .aside__author {
+    line-height: normal;
+    font-size: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+  }
+  .aside__center {
+    border-radius: 10px
+  }
+  .aside__author img {
+    width: 14px;
+    height: 14px
+  }
   .popup-entry-clothes__list,
   .popup-new-room__list {
     -ms-grid-columns: (1fr)[2];
@@ -9001,7 +9074,9 @@ section {
   .section-right__airdrop .move__submit span {
     font-size: 12px
   }
-  .section-right__airdrop .airdrop__fly .time {
+  .section-right__airdrop .airdrop__fly .time,
+  .section-right__airdrop .airdrop__fly .timer small.dot,
+  .section-right__airdrop .airdrop__fly .timer span {
     font-size: 18px
   }
   .section-right__airdrop .airdrop__bank,
@@ -9197,8 +9272,7 @@ section {
     width: 100%
   }
   .aside__center {
-    padding: 0;
-    padding-left: 10px
+    padding: 0
   }
   .aside__fight img {
     width: 20px;
@@ -9220,7 +9294,7 @@ section {
 }
 @media screen and (max-width:360px) {
   .aside__list a {
-    margin-right: 7px
+    margin-right: 14px
   }
   .section-right__airdrop .fly__top {
     -webkit-box-orient: vertical;
